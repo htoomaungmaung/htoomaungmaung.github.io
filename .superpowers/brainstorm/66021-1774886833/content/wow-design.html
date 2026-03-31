@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio Design - Wow Version</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0b10; color: #e2e8f0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; overflow-x: hidden; }
+
+  .mockup-frame {
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(59,130,246,0.2);
+    background: #0f1117;
+  }
+  .mockup-bar {
+    background: #161926;
+    padding: 10px 16px;
+    font-size: 12px;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid rgba(59,130,246,0.1);
+  }
+  .mockup-bar .dots { display: flex; gap: 6px; }
+  .mockup-bar .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .mockup-bar .dot:nth-child(1) { background: #ef4444; }
+  .mockup-bar .dot:nth-child(2) { background: #eab308; }
+  .mockup-bar .dot:nth-child(3) { background: #22c55e; }
+
+  .page { background: #0a0b10; }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative;
+    padding: 64px 40px 56px;
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 80%, rgba(139,92,246,0.08) 0%, transparent 50%);
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(59,130,246,0.3), transparent),
+      radial-gradient(1px 1px at 40% 70%, rgba(139,92,246,0.2), transparent),
+      radial-gradient(1px 1px at 60% 20%, rgba(59,130,246,0.2), transparent),
+      radial-gradient(1px 1px at 80% 50%, rgba(139,92,246,0.15), transparent),
+      radial-gradient(1px 1px at 10% 80%, rgba(99,102,241,0.2), transparent),
+      radial-gradient(1px 1px at 70% 90%, rgba(59,130,246,0.15), transparent),
+      radial-gradient(1px 1px at 50% 10%, rgba(139,92,246,0.25), transparent),
+      radial-gradient(1px 1px at 90% 15%, rgba(59,130,246,0.2), transparent),
+      radial-gradient(1px 1px at 30% 55%, rgba(99,102,241,0.15), transparent);
+    pointer-events: none;
+  }
+  .hero-photo {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    margin: 0 auto 20px;
+    padding: 3px;
+    position: relative;
+  }
+  .hero-photo-inner {
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    background: #1a1a2e;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 36px; color: #e2e8f0; font-weight: 300;
+    overflow: hidden;
+  }
+  .hero-photo::after {
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #3b82f6);
+    z-index: -1;
+    filter: blur(12px);
+    opacity: 0.5;
+  }
+  .hero-status {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: rgba(34,197,94,0.1);
+    border: 1px solid rgba(34,197,94,0.2);
+    border-radius: 20px;
+    padding: 4px 14px;
+    font-size: 11px;
+    color: #4ade80;
+    margin-bottom: 20px;
+  }
+  .hero-status .pulse {
+    width: 6px; height: 6px;
+    background: #4ade80;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+  .hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .hero .role {
+    font-size: 14px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .hero .tagline {
+    font-size: 15px;
+    color: #94a3b8;
+    max-width: 520px;
+    margin: 0 auto 24px;
+    line-height: 1.7;
+  }
+  .hero-links {
+    display: flex; gap: 12px; justify-content: center;
+  }
+  .hero-links a {
+    display: flex; align-items: center; gap: 6px;
+    color: #60a5fa;
+    font-size: 13px;
+    text-decoration: none;
+    padding: 6px 16px;
+    border-radius: 8px;
+    background: rgba(59,130,246,0.08);
+    border: 1px solid rgba(59,130,246,0.15);
+    transition: all 0.3s;
+  }
+  .hero-links a:hover { background: rgba(59,130,246,0.15); transform: translateY(-1px); }
+
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(59,130,246,0.2), rgba(139,92,246,0.2), transparent);
+    margin: 0 40px;
+  }
+
+  /* ===== IMPACT NUMBERS ===== */
+  .impact {
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+  }
+  .impact-item { text-align: center; }
+  .impact-num {
+    font-size: 32px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .impact-label { font-size: 12px; color: #64748b; margin-top: 4px; }
+
+  /* ===== STORY ===== */
+  .story {
+    padding: 48px 40px;
+  }
+  .section-label {
+    font-size: 11px;
+    color: #3b82f6;
+    letter-spacing: 3px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: 24px;
+    color: #f1f5f9;
+    margin-bottom: 20px;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  .story p {
+    font-size: 14px;
+    color: #94a3b8;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+  .story .highlight {
+    color: #e2e8f0;
+    font-weight: 500;
+  }
+
+  /* ===== WHAT I DO ===== */
+  .focus { padding: 48px 40px; }
+  .focus-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .focus-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(59,130,246,0.1);
+    border-radius: 12px;
+    padding: 24px 20px;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .focus-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .focus-card:hover { border-color: rgba(59,130,246,0.3); transform: translateY(-2px); }
+  .focus-card:hover::before { opacity: 1; }
+  .focus-icon { font-size: 28px; margin-bottom: 12px; }
+  .focus-card h3 { font-size: 14px; color: #f1f5f9; font-weight: 600; margin-bottom: 8px; }
+  .focus-card p { font-size: 12px; color: #64748b; line-height: 1.6; }
+
+  /* ===== CAREER JOURNEY ===== */
+  .journey { padding: 48px 40px; }
+  .timeline { position: relative; padding-left: 32px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg, #3b82f6, #8b5cf6, #6366f1, #475569);
+  }
+  .chapter {
+    position: relative;
+    margin-bottom: 28px;
+    padding: 20px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(59,130,246,0.08);
+    border-radius: 10px;
+    transition: all 0.3s;
+  }
+  .chapter:hover {
+    border-color: rgba(59,130,246,0.2);
+    background: rgba(59,130,246,0.03);
+  }
+  .chapter-dot {
+    position: absolute;
+    left: -30px; top: 24px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    border: 2px solid;
+    background: #0a0b10;
+  }
+  .chapter:nth-child(1) .chapter-dot { border-color: #3b82f6; box-shadow: 0 0 12px rgba(59,130,246,0.4); }
+  .chapter:nth-child(2) .chapter-dot { border-color: #8b5cf6; }
+  .chapter:nth-child(3) .chapter-dot { border-color: #6366f1; }
+  .chapter:nth-child(4) .chapter-dot { border-color: #475569; }
+  .chapter-date { font-size: 11px; font-weight: 600; margin-bottom: 2px; }
+  .chapter:nth-child(1) .chapter-date { color: #3b82f6; }
+  .chapter:nth-child(2) .chapter-date { color: #8b5cf6; }
+  .chapter:nth-child(3) .chapter-date { color: #6366f1; }
+  .chapter:nth-child(4) .chapter-date { color: #64748b; }
+  .chapter-title { font-size: 16px; color: #f1f5f9; font-weight: 600; margin-bottom: 2px; }
+  .chapter-company { font-size: 12px; color: #64748b; margin-bottom: 8px; }
+  .chapter-desc { font-size: 12px; color: #94a3b8; line-height: 1.7; }
+  .chapter-tech {
+    display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;
+  }
+  .chapter-tech span {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(59,130,246,0.08);
+    color: #64748b;
+    border: 1px solid rgba(59,130,246,0.1);
+  }
+
+  /* ===== SKILLS ===== */
+  .skills { padding: 48px 40px; }
+  .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .skill-group h4 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(59,130,246,0.1);
+  }
+  .skill-group:nth-child(1) h4 { color: #60a5fa; }
+  .skill-group:nth-child(2) h4 { color: #a78bfa; }
+  .skill-group:nth-child(3) h4 { color: #818cf8; }
+  .skill-group:nth-child(4) h4 { color: #38bdf8; }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-tag {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 6px;
+    color: #cbd5e1;
+    transition: all 0.3s;
+  }
+  .skill-group:nth-child(1) .skill-tag { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.12); }
+  .skill-group:nth-child(2) .skill-tag { background: rgba(139,92,246,0.08); border: 1px solid rgba(139,92,246,0.12); }
+  .skill-group:nth-child(3) .skill-tag { background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.12); }
+  .skill-group:nth-child(4) .skill-tag { background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.12); }
+  .skill-tag:hover { transform: translateY(-1px); }
+  .skill-tag.hot {
+    position: relative;
+  }
+  .skill-tag.hot::after {
+    content: 'trending';
+    position: absolute;
+    top: -6px; right: -4px;
+    font-size: 7px;
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    color: white;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  /* ===== CREDENTIALS ===== */
+  .credentials { padding: 48px 40px; }
+  .cred-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .cred-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(59,130,246,0.08);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .cred-card h4 { font-size: 11px; color: #3b82f6; letter-spacing: 2px; margin-bottom: 12px; }
+  .cred-item { margin-bottom: 10px; }
+  .cred-item .name { font-size: 13px; color: #e2e8f0; font-weight: 500; }
+  .cred-item .detail { font-size: 11px; color: #64748b; }
+  .cred-item .badge {
+    display: inline-block;
+    font-size: 9px;
+    background: linear-gradient(135deg, rgba(234,179,8,0.15), rgba(234,179,8,0.05));
+    color: #fbbf24;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(234,179,8,0.2);
+    margin-top: 2px;
+  }
+
+  /* ===== CTA ===== */
+  .cta {
+    padding: 56px 40px;
+    text-align: center;
+    background: radial-gradient(ellipse at 50% 100%, rgba(59,130,246,0.08) 0%, transparent 60%);
+  }
+  .cta h2 {
+    font-size: 28px;
+    font-family: Georgia, serif;
+    margin-bottom: 8px;
+    background: linear-gradient(135deg, #f1f5f9, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .cta p { font-size: 14px; color: #64748b; margin-bottom: 24px; }
+  .cta-buttons { display: flex; gap: 12px; justify-content: center; }
+  .btn-primary {
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+    color: white;
+    padding: 10px 28px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(59,130,246,0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(59,130,246,0.4); }
+  .btn-outline {
+    color: #60a5fa;
+    padding: 10px 28px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid rgba(59,130,246,0.3);
+    background: rgba(59,130,246,0.05);
+    transition: all 0.3s;
+  }
+  .btn-outline:hover { background: rgba(59,130,246,0.1); transform: translateY(-1px); }
+
+  .note {
+    max-width: 800px;
+    margin: 24px auto;
+    padding: 20px 24px;
+    background: rgba(59,130,246,0.05);
+    border: 1px solid rgba(59,130,246,0.15);
+    border-radius: 10px;
+    font-size: 13px;
+    color: #94a3b8;
+    line-height: 1.7;
+  }
+  .note strong { color: #60a5fa; }
+</style>
+</head>
+<body>
+
+<div class="note">
+  <strong>Design Preview:</strong> Full portfolio layout with wow effects. In the real build: animated particle background in the hero, sections fade-in on scroll, gradient text animations, hover glow effects on cards, and a smooth sticky nav that appears as you scroll down. Trending tech badges highlight in-demand skills.
+</div>
+
+<div class="mockup-frame">
+  <div class="mockup-bar">
+    <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+    htoomaungmaung.github.io
+  </div>
+  <div class="page">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-status">
+        <span class="pulse"></span>
+        Open to opportunities
+      </div>
+      <div class="hero-photo">
+        <div class="hero-photo-inner">H</div>
+      </div>
+      <h1>Htoo Maung Maung</h1>
+      <div class="role">AI ENGINEERING LEADER</div>
+      <p class="tagline">I build teams that ship AI-powered products. From enterprise SaaS to distributed engineering across four countries, I lead where people, systems, and practical AI meet.</p>
+      <div class="hero-links">
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Email</a>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- IMPACT NUMBERS -->
+    <div class="impact">
+      <div class="impact-item">
+        <div class="impact-num">11+</div>
+        <div class="impact-label">Years in Engineering</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">8+</div>
+        <div class="impact-label">Engineers Managed</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">4</div>
+        <div class="impact-label">Countries Led Across</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num">3</div>
+        <div class="impact-label">SaaS Products Shipped</div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- MY STORY -->
+    <div class="story">
+      <div class="section-label">MY STORY</div>
+      <h2 class="section-title">How I got here</h2>
+      <p><span class="highlight">Hey, I'm Htoo. You can also call me Franzy.</span> I came to Singapore from Myanmar with a curiosity for how things work and a polytechnic robotics gold medal that proved I could build them.</p>
+      <p>Over 11 years, I've gone from writing Java servlets and building learning platforms to <span class="highlight">leading distributed engineering teams across Singapore, Japan, Vietnam, and the Philippines.</span> Along the way, I built an applicant tracking system with Elasticsearch at its core, grew from senior engineer to engineering manager within the same company, and shipped enterprise SaaS products used by thousands.</p>
+      <p>Today at Manabie International, I'm doing what excites me most: <span class="highlight">integrating AI tools directly into how my team builds software</span>, from sprint rituals to code reviews to deployment workflows. I believe the best engineering leaders don't just manage; they multiply their team's capabilities by bringing the right tools and the right culture together.</p>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- WHAT I DO -->
+    <div class="focus">
+      <div class="section-label">WHAT I DO</div>
+      <h2 class="section-title">Current focus</h2>
+      <div class="focus-cards">
+        <div class="focus-card">
+          <div class="focus-icon">&#x1F916;</div>
+          <h3>AI-Integrated Engineering</h3>
+          <p>Embedding AI tools into daily engineering workflows. From AI-assisted code reviews to intelligent sprint planning, I make AI a natural part of how teams build.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-icon">&#x1F30F;</div>
+          <h3>Distributed Team Leadership</h3>
+          <p>Leading engineers across 4 countries. Building delivery culture that works across time zones, languages, and working styles.</p>
+        </div>
+        <div class="focus-card">
+          <div class="focus-icon">&#x1F3D7;&#xFE0F;</div>
+          <h3>Enterprise SaaS Architecture</h3>
+          <p>Full-stack delivery on Salesforce platform. System design, ERP modules, CI/CD pipelines, and production-grade solutions at scale.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- CAREER JOURNEY -->
+    <div class="journey">
+      <div class="section-label">CAREER JOURNEY</div>
+      <h2 class="section-title">Chapters so far</h2>
+      <div class="timeline">
+        <div class="chapter">
+          <div class="chapter-dot"></div>
+          <div class="chapter-date">2025 - PRESENT</div>
+          <div class="chapter-title">Chapter 5: Going Global</div>
+          <div class="chapter-company">Software Engineering Manager, Manabie International</div>
+          <div class="chapter-desc">Leading full-stack ERP delivery across Singapore, Japan, Vietnam, and the Philippines. Integrating AI tools into daily engineering workflows and sprint rituals. Setting technical direction while balancing feature delivery, experimentation, and stakeholder alignment across borders.</div>
+          <div class="chapter-tech">
+            <span>React</span><span>TypeScript</span><span>Node.js</span><span>Salesforce</span><span>Apex</span><span>Python</span><span>AI Tools</span>
+          </div>
+        </div>
+        <div class="chapter">
+          <div class="chapter-dot"></div>
+          <div class="chapter-date">2019 - 2024</div>
+          <div class="chapter-title">Chapters 2-4: Building & Leading</div>
+          <div class="chapter-company">Senior Engineer to Engineering Manager, TeamSpirit Singapore</div>
+          <div class="chapter-desc">Grew from individual contributor to managing a team of 8. Built complex UI with React and Redux, optimized performance, enhanced CI/CD pipelines, and defined OKRs. The chapter where I discovered that great engineering is as much about people as it is about code.</div>
+          <div class="chapter-tech">
+            <span>React</span><span>Redux</span><span>TypeScript</span><span>Salesforce</span><span>Jenkins</span>
+          </div>
+        </div>
+        <div class="chapter">
+          <div class="chapter-dot"></div>
+          <div class="chapter-date">2017 - 2019</div>
+          <div class="chapter-title">Chapter 1: Going Deep</div>
+          <div class="chapter-company">Senior Software Engineer, Octus Pte Ltd</div>
+          <div class="chapter-desc">Led backend development for a SaaS applicant tracking system. Implemented enterprise Elasticsearch, managed AWS infrastructure, and built CI/CD pipelines. First taste of leading technical decisions end to end.</div>
+          <div class="chapter-tech">
+            <span>Java</span><span>Spring Boot</span><span>Angular</span><span>Elasticsearch</span><span>AWS</span><span>MongoDB</span>
+          </div>
+        </div>
+        <div class="chapter">
+          <div class="chapter-dot"></div>
+          <div class="chapter-date">2014 - 2017</div>
+          <div class="chapter-title">The Beginning</div>
+          <div class="chapter-company">Software Engineer, Blueorange Pte Ltd</div>
+          <div class="chapter-desc">Built enterprise learning management systems for government institutions. Real-time collaboration with WebSocket, video platform integration, and the lessons that come from maintaining production systems used by thousands.</div>
+          <div class="chapter-tech">
+            <span>Java</span><span>JSP</span><span>WebSocket</span><span>Node.js</span><span>MySQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- SKILLS & TOOLS -->
+    <div class="skills">
+      <div class="section-label">SKILLS & TOOLS</div>
+      <h2 class="section-title">What I work with</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h4>LANGUAGES & FRAMEWORKS</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag hot">TypeScript</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag hot">Python</span>
+            <span class="skill-tag hot">React</span>
+            <span class="skill-tag">Redux</span>
+            <span class="skill-tag hot">Next.js</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag hot">Node.js</span>
+            <span class="skill-tag hot">FastAPI</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>AI & AUTOMATION</h4>
+          <div class="skill-tags">
+            <span class="skill-tag hot">GitHub Copilot</span>
+            <span class="skill-tag hot">Claude AI</span>
+            <span class="skill-tag hot">LangChain</span>
+            <span class="skill-tag hot">OpenAI API</span>
+            <span class="skill-tag">AI-Assisted Code Review</span>
+            <span class="skill-tag">Prompt Engineering</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>INFRASTRUCTURE & DATA</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag hot">Docker</span>
+            <span class="skill-tag">Salesforce</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Elasticsearch</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag hot">GitHub Actions</span>
+            <span class="skill-tag">RabbitMQ</span>
+            <span class="skill-tag">Nginx</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h4>LEADERSHIP & PROCESS</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">Team Building</span>
+            <span class="skill-tag">Hiring & Recruitment</span>
+            <span class="skill-tag">OKR & KPI Setting</span>
+            <span class="skill-tag">Stakeholder Management</span>
+            <span class="skill-tag">System Design</span>
+            <span class="skill-tag">Mentorship</span>
+            <span class="skill-tag">Cross-functional Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- CREDENTIALS -->
+    <div class="credentials">
+      <div class="section-label">CREDENTIALS</div>
+      <h2 class="section-title">Education & certifications</h2>
+      <div class="cred-grid">
+        <div class="cred-card">
+          <h4>EDUCATION</h4>
+          <div class="cred-item">
+            <div class="name">B.Eng Computer Engineering</div>
+            <div class="detail">Nanyang Technological University, 2011-2014</div>
+          </div>
+          <div class="cred-item">
+            <div class="name">Diploma in Manufacturing Engineering</div>
+            <div class="detail">Nanyang Polytechnic, 2008-2011</div>
+            <div class="badge">&#127942; Gold Award - Singapore Robotic Games 2011</div>
+          </div>
+        </div>
+        <div class="cred-card">
+          <h4>CERTIFICATIONS</h4>
+          <div class="cred-item">
+            <div class="name">Salesforce Certified JavaScript Developer</div>
+          </div>
+          <div class="cred-item">
+            <div class="name">Salesforce Certified Administrator</div>
+          </div>
+          <div class="cred-item">
+            <div class="name">Certified Scrum Master (CSM)</div>
+            <div class="detail">SCRUM Alliance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <h2>Let's build something together</h2>
+      <p>Looking for an engineering leader who ships? Let's talk.</p>
+      <div class="cta-buttons">
+        <a href="#" class="btn-primary">Connect on LinkedIn</a>
+        <a href="#" class="btn-outline">Email Me</a>
+        <a href="#" class="btn-outline">Download Resume</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="note">
+  <strong>Wow features in the actual build:</strong><br>
+  &#10024; Animated particle constellation in the hero background<br>
+  &#10024; Sections fade + slide up on scroll (IntersectionObserver)<br>
+  &#10024; Gradient text animation on the name/role<br>
+  &#10024; Hover glow effects on all cards<br>
+  &#10024; Timeline line draws as you scroll down<br>
+  &#10024; Smooth sticky nav appears after scrolling past the hero<br>
+  &#10024; Skill tags have subtle hover lift + glow<br>
+  &#10024; "Trending" badges on in-demand skills<br>
+  &#10024; Impact numbers count up when they enter viewport<br>
+  &#10024; Your actual casual photo with gradient ring + glow<br>
+  &#10024; Responsive: beautiful on mobile too
+</div>
+
+</body>
+</html>

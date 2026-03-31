@@ -1,666 +1,326 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Htoo Maung Maung</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
-	<meta name="author" content="" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Htoo Maung Maung | AI Engineering Leader</title>
+  <meta name="description" content="Engineering leader building AI-powered teams and shipping enterprise SaaS products across 4 countries. 11+ years in software engineering, team leadership, and AI integration.">
+  <meta name="keywords" content="Htoo Maung Maung, AI Engineering Leader, Software Engineering Manager, Engineering Manager, Technical Lead">
+  <meta name="author" content="Htoo Maung Maung">
 
-  <!-- Facebook and Twitter integration -->
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Htoo Maung Maung | AI Engineering Leader">
+  <meta property="og:description" content="Engineering leader building AI-powered teams and shipping enterprise SaaS products across 4 countries.">
+  <meta property="og:image" content="images/about3.png">
+  <meta property="og:url" content="https://htoomaungmaung.github.io/">
+  <meta property="og:site_name" content="Htoo Maung Maung">
+  <meta property="og:type" content="website">
 
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<link rel="shortcut icon" href="favicon.ico">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Htoo Maung Maung | AI Engineering Leader">
+  <meta name="twitter:description" content="Engineering leader building AI-powered teams and shipping enterprise SaaS products across 4 countries.">
+  <meta name="twitter:image" content="images/about3.png">
 
-	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-	<!-- Flaticons  -->
-	<link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-		
-	
-		
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-126823716-1"></script>
-	<script>
-	  window.dataLayer = window.dataLayer || [];
-	  function gtag(){dataLayer.push(arguments);}
-	  gtag('js', new Date());
+  <!-- Sticky Navigation -->
+  <nav class="sticky-nav" id="stickyNav">
+    <div class="sticky-nav-inner">
+      <span class="nav-name">Htoo Maung Maung</span>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#story">My Story</a>
+        <a href="#focus">What I Do</a>
+        <a href="#journey">Journey</a>
+        <a href="#skills">Skills</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
 
-	  gtag('config', 'UA-126823716-1');
-	</script>
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <canvas id="particles"></canvas>
+    <div class="hero-content">
+      <div class="hero-status">
+        <span class="pulse-dot"></span>
+        Open to opportunities
+      </div>
+      <div class="hero-photo">
+        <img src="images/casual_photo.png" alt="Htoo Maung Maung" width="140" height="140">
+      </div>
+      <h1>Htoo Maung Maung</h1>
+      <p class="hero-role">AI ENGINEERING LEADER</p>
+      <p class="hero-tagline">I build teams that ship AI-powered products. From enterprise SaaS to distributed engineering across four countries, I lead where people, systems, and practical AI meet.</p>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/htoomaungmaung" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/htoomaungmaung" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:htoofranz100@gmail.com">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </section>
 
-	</head>
-	<body>
-	<div id="colorlib-page">
-		<div class="container-wrap">
-		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="border js-fullheight">
-			<div class="text-center">
-				<div class="author-img" style="background-image: url(images/about3.png);"></div>
-				<h1 id="colorlib-logo"><a href="index.html">Htoo Maung Maung</a></h1>
-				<span class="position"><a href="https://www.linkedin.com/in/htoomaungmaung" target="_blank"><i class="icon-linkedin2"></i></a>
-					<a href="https://github.com/htoomaungmaung" target="_blank"><i class="icon-github"></i></a>
-					<a href="mailto:htoofranz100@gmail.com" target="_blank"><i class="icon-mail5"></i></a> 
-				</span>
-				<!-- <p><i class="icon-mail5"> </i>htoomaungmg@gmail.com</p>	
-				<p><i class="icon-phone3"> </i>+65 9062 0213</p>	 -->
-			</div>
-			<nav id="colorlib-main-menu" role="navigation" class="navbar">
-				<div id="navbar" class="collapse">
-					<ul>
-						<li class="active"><a href="#" data-nav-section="home">Home</a></li>
-						<li><a href="#" data-nav-section="about">About</a></li>
-						<li><a href="#" data-nav-section="experience">Experience</a></li>						
-						<li><a href="#" data-nav-section="skills">Skills</a></li>
-						<li><a href="#" data-nav-section="education">Education</a></li>
-						<li><a href="#" data-nav-section="services">More</a></li>
-						
-					</ul>
-					
-				</div>	
-				
-			</nav>
-					
-			
+  <div class="section-divider"></div>
 
-		</aside>
+  <!-- Impact Numbers -->
+  <section class="impact fade-in" id="impact">
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="impact-num" data-target="11" data-suffix="+">0</div>
+        <div class="impact-label">Years in Engineering</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num" data-target="8" data-suffix="+">0</div>
+        <div class="impact-label">Engineers Managed</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num" data-target="4" data-suffix="">0</div>
+        <div class="impact-label">Countries Led Across</div>
+      </div>
+      <div class="impact-item">
+        <div class="impact-num" data-target="3" data-suffix="">0</div>
+        <div class="impact-label">SaaS Products Shipped</div>
+      </div>
+    </div>
+  </section>
 
-		<div id="colorlib-main">
-			<section id="colorlib-hero" class="js-fullheight" data-section="home">
-				<div class="flexslider js-fullheight">
-					<ul class="slides">
-				   	<li style="background-image: url(images/img_bg_1.jpg);">
-				   		<div class="overlay"></div>
-				   		<div class="container-fluid">
-				   			<div class="row">
-					   			<div class="col-md-6 col-md-offset-3 col-md-pull-3 col-sm-12 col-xs-12 js-fullheight slider-text">
-					   				<div class="slider-text-inner js-fullheight">
-					   					<div class="desc">
-						   					<h1>Hi! <br>I'm Htoo</h1>
-                                               <h2>I am a software engineer</h2>
-                                               <h2>Experienced IT professional with over a decade of expertise in software engineering and team management. Proven track record in developing SaaS applications, enhancing customer experiences, and leading innovative projects.</h2>
-<!-- 												<p><a href="https://
-.google.com/drive/folders/1Ih-fLPimQBEbZz_S7kv50636M4R3g7YZ?usp=sharing" target="_blank" class="btn btn-primary btn-learn">Download my CV here <i class="icon-download4"></i></a></p> -->
-											</div>
-					   				</div>
-					   			</div>
-					   		</div>
-				   		</div>
-				   	</li>				   	
-				  	</ul>
-			  	</div>
-			</section>
+  <div class="section-divider"></div>
 
-			<section class="colorlib-about" data-section="about">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="row row-bottom-padded-sm">
-								<div class="col-md-12">
-									<div class="about-desc">
-										<span class="heading-meta">About Me</span>
-										<h2 class="colorlib-heading">Who Am I?</h2>
-                                        <p><strong>Hi, my name is Htoo.</strong> 
-                                            Alternatively, can call me <strong>Franzy</strong>. 
-                                            </p>
-										<p>
-					    I am just trying to build applications, solving problems and explore new technologies along the way. 
-                                        </p>
-                                        <p>    
-                                            Started my career as Software Engineer at 2014. 
-                                            Since then technology has been envolved a lot. 
-                                            While studying the various technologies, 
-                                            I fall in love in microservices and concurrent processing.
-                                            I have been experimenting and would write blog post about it in future as information sharing. 
-										 </p>
-										<p>
-											Coming from the hardware background, I love building custom desktop PC.
-											Pick my favourite components and building from scratch is one of my taste in technology.
-										</p> 
-                                        <p>
-                                            Last but not least, I have been studying blockchain technology and I believe it will bring exciting possibilities.
-                                        </p>
-									</div>
-								</div>
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="colorlib-experience" data-section="experience">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3" >
-								<span class="heading-meta">Experience</span>
-								<h2 class="colorlib-heading">Work Experience</h2>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-12">
-							 <div class="timeline-centered">
-								 <article class="timeline-entry" >
-									<div class="timeline-entry-inner">
-	
-									   <div class="timeline-icon color-5">
-										  <i class="icon-pen2"></i>
-									   </div>
-	
-									   <div class="timeline-label">
-										  <h2>TeamSpirit Singapore Pte Ltd, Singapore <span>2019-Present</span></h2>
-										  <p>Manage and lead a team of 8 members and in charge of developing PSA (Professional Service Automation) module which is part of the SaaS application hosted on the Salesforce platform. Work closely with the designer, QA and project manager to make sure that roadmap goals are achieved as planned. Focus on customer experience and always work with a good UI/UX experience in mind. Initiated a team culture where innovation is well welcome and speculation becomes reality. Release planning is done with room for innovation. Team members including myself often share proof of concepts which could potentially  be included in the product roadmap and used by tens of thousands of daily active users.  
-</p>
-											<p><strong>Tech</strong> - Reactjs, Redux, Typescript, Nodejs, CirclesCI </p>
-									   </div>
-									</div>
-								 </article>
-								 <article class="timeline-entry" >
-									<div class="timeline-entry-inner">
-	
-									   <div class="timeline-icon color-1">
-										  <i class="icon-pen2"></i>
-									   </div>
-	
-									   <div class="timeline-label">
-										  <h2>Software Engineer, Octus Pte Ltd, Singapore <span>2017-2019</span></h2>
-										  <p>Senior full stack developer for SaaS applicant tracking system for recruitment agencies. 
-											  Mainly focus on developing Java backend endpoints & frontend with Angular in agile development life cycle. 
-											  Specialize in Elasticsearch for readily scalable and enterprise-grade search engine. 
-											  Used Ansible and Atlassian Bamboo for CICD. 
-										  </p>
-											<p><strong>Tech</strong> - Java, J2EE, Spring Boot, Maven, Git, MongoDb, Elasticsearch, Linux server</p>
-									   </div>
-									</div>
-								 </article>
-	
-	
-								 <article class="timeline-entry ">
-									<div class="timeline-entry-inner">
-									   <div class="timeline-icon color-2">
-										  <i class="icon-pen2"></i>
-									   </div>
-									   <div class="timeline-label">
-										   <h2>Software Engineer, Blueorange Pte Ltd, Singapore <span>2014-2017</span></h2>
-										  <p>Developer for online learning management and lecture recording system which is used by both government and private institutions in Singapore. 
-											  Designed and participated in enterprise-level development with large-scale applications and high-volume transactions. 
-											  Provided on-site customer support and maintain production systems.</p>
-											<p><strong>Tech</strong> - Java, JSP, J2EE, Structs, SVN, MSSQL, MySQL, Apache, Tomcat, Windows IIS, 
-												Structs2, JavaScript, JQuery, Ajax, Websocket, Nodejs</p>
-									   </div>
-									</div>
-								 </article>
-	
-								 <article class="timeline-entry" >
-									<div class="timeline-entry-inner">
-									   <div class="timeline-icon color-3">
-										  <i class="icon-pen2"></i>
-									   </div>
-									   <div class="timeline-label">
-										   <h2>Final Year Project, Ntu, Singapore <span>2013-2014</span></h2>
-										  <p>Make use of the existing algorithm that can score image without human help, developed
-											a desktop application with Matlab. Integrated with Google image search as extended
-											feature which compare first 10 images from the Google image search and calculate the
-											scores.</p>
-										<p><strong>Tech</strong> - Matlab</p>	
-									   </div>
-									</div>
-								 </article>
-	
-								 <article class="timeline-entry" >
-									<div class="timeline-entry-inner">
-									   <div class="timeline-icon color-4">
-										  <i class="icon-pen2"></i>
-									   </div>
-									   <div class="timeline-label">
-										   <h2>Software Engineering Project, Ntu, Singapore <span>2013</span></h2>
-										  <p>Developed full-stack using django python framework. Used HTML, JavaScript and
-											bootstrap for frontend interface and PostgresSQL for database. At the integration phase,
-											worked as a liaison officer between frontend and backend developers.</p>
-											<p><strong>Tech</strong> - Django, Python, PostgresSQL, JavaScript, Bootstrap</p>
-									   </div>
-									</div>
-								 </article>
-	
-								 <article class="timeline-entry" >
-									<div class="timeline-entry-inner">
-									   <div class="timeline-icon color-5">
-										  <i class="icon-pen2"></i>
-									   </div>
-									   <div class="timeline-label">
-										   <h2>Internship, Illinois At Singapore Pte Ltd (Adsc) <span>2013</span></h2>
-										  <p>Developed Matlab program to automate the process of transforming the raw eye tracking
-											data into the standard data format and did the data analysis.</p>
-											<p><strong>Tech</strong> - Matlab</p>
-									   </div>
-									</div>
-								 </article>
-	
-								 <article class="timeline-entry">
-									<div class="timeline-entry-inner">
-									   <div class="timeline-icon color-none">
-									   </div>
-									</div>
-								 </article>
-							  </div>
-						   </div>
-					   </div>
-					</div>
-				</section>
+  <!-- My Story -->
+  <section class="story fade-in" id="story">
+    <div class="section-inner">
+      <p class="section-label">My Story</p>
+      <h2 class="section-title">How I got here</h2>
+      <p><span class="highlight">Hey, I'm Htoo. You can also call me Franzy.</span> I came to Singapore from Myanmar with a curiosity for how things work and a polytechnic robotics gold medal that proved I could build them.</p>
+      <p>Over 11 years, I've gone from writing Java servlets and building learning platforms to <span class="highlight">leading distributed engineering teams across Singapore, Japan, Vietnam, and the Philippines.</span> Along the way, I built an applicant tracking system with Elasticsearch at its core, grew from senior engineer to engineering manager within the same company, and shipped enterprise SaaS products used by thousands.</p>
+      <p>Today at Manabie International, I'm doing what excites me most: <span class="highlight">integrating AI tools directly into how my team builds software</span>, from sprint rituals to code reviews to deployment workflows. I believe the best engineering leaders don't just manage; they multiply their team's capabilities by bringing the right tools and the right culture together.</p>
+    </div>
+  </section>
 
-			
-			
-			
-			<section class="colorlib-skills" data-section="skills">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 ">
-							<span class="heading-meta">My Specialty</span>
-							<h2 class="colorlib-heading ">My Skills</h2>
-						</div>
-					</div>
-					<div class="row">
+  <div class="section-divider"></div>
 
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>Java</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-1" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-								    <span>90%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>JavaScript, JQuery, Ajax</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="95"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:95%">
-								    <span>95%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>React js</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="90"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:90%">
-								    <span>90%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>Angular</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="80"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-								    <span>80%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>Spring Boot, Maven</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:85%">
-								    <span>85%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>Apache, Tomcat</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>NoSQL</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>Elasticsearch</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:70%">
-								    <span>70%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>SQL</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-7" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:65%">
-								    <span>65%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>Struts, Struts2</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-2" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:75%">
-								    <span>75%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>Windows IIS</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-3" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:80%">
-								    <span>80%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>Nodejs</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-4" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:60%">
-								    <span>60%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>Python</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-5" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:55%">
-								    <span>55%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6">
-							<div class="progress-wrap">
-								<h3>Php</h3>
-								<div class="progress">
-								 	<div class="progress-bar color-6" role="progressbar" aria-valuenow="75"
-								  	aria-valuemin="0" aria-valuemax="100" style="width:50%">
-								    <span>50%</span>
-								  	</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+  <!-- What I Do -->
+  <section class="focus fade-in" id="focus">
+    <div class="section-inner">
+      <p class="section-label">What I Do</p>
+      <h2 class="section-title">Current focus</h2>
+      <div class="focus-cards">
+        <div class="focus-card fade-in delay-1">
+          <div class="focus-icon">&#x1F916;</div>
+          <h3>AI-Integrated Engineering</h3>
+          <p>Embedding AI tools into daily engineering workflows. From AI-assisted code reviews to intelligent sprint planning, I make AI a natural part of how teams build.</p>
+        </div>
+        <div class="focus-card fade-in delay-2">
+          <div class="focus-icon">&#x1F30F;</div>
+          <h3>Distributed Team Leadership</h3>
+          <p>Leading engineers across 4 countries. Building delivery culture that works across time zones, languages, and working styles.</p>
+        </div>
+        <div class="focus-card fade-in delay-3">
+          <div class="focus-icon">&#x1F3D7;&#xFE0F;</div>
+          <h3>Enterprise SaaS Architecture</h3>
+          <p>Full-stack delivery on Salesforce platform. System design, ERP modules, CI/CD pipelines, and production-grade solutions at scale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-			<section class="colorlib-education" data-section="education">
-				<div class="colorlib-narrow-content">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-md-pull-3 " >
-							<span class="heading-meta">Education</span>
-							<h2 class="colorlib-heading ">Education</h2>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 " >
-							<div class="fancy-collapse-panel">
-								<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingOne">
-									        <h4 class="panel-title">
-									            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">Bachelor of Computer Engineering
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-									         <div class="panel-body">
-									            <div class="row">
-										      		<div class="col-md-4">
-										      			<p>2011 - 2014</p>
-										      		</div>
-										      		<div class="col-md-8">
-										      			<p><strong>Nanyang Technological University, Singapore</strong></p>
-														<p>Computer Engineering (B. Eng)</p>
-										      		</div>
-										      	</div>
-									         </div>
-									    </div>
-									</div>								
-								
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingFour">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">Diploma in Manufacturing Engineering
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
-									        <div class="panel-body">
-									            <div class="row">
-													<div class="col-md-4">
-														<p>2008 - 2011</p>
-													</div>
-													<div class="col-md-8">
-														<p><strong>Nanyang Polytechnic, Singapore</strong></p>
-													  <p>Diploma in Manufacturing Engineering</p>
-													</div>
-												</div>
-									        </div>
-									    </div>
-									</div>
+  <div class="section-divider"></div>
 
-									<div class="panel panel-default">
-									    <div class="panel-heading" role="tab" id="headingFive">
-									        <h4 class="panel-title">
-									            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">High School Secondary Education
-									            </a>
-									        </h4>
-									    </div>
-									    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
-									        <div class="panel-body">
-												<div class="row">
-													<div class="col-md-4">
-														<p>2000 - 2008</p>
-													</div>
-													<div class="col-md-8">
-														<p><strong>High School in Myanmar</strong></p>
-													</div>
-												</div>	
-											</div>
-									    </div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+  <!-- Career Journey -->
+  <section class="journey fade-in" id="journey">
+    <div class="section-inner">
+      <p class="section-label">Career Journey</p>
+      <h2 class="section-title">Chapters so far</h2>
+      <div class="timeline" id="timeline">
+        <div class="timeline-line" id="timelineLine"></div>
 
-			<section class="colorlib-services" data-section="services">
-					<div class="colorlib-narrow-content">
-						<div class="row">
-							<div class="col-md-6 col-md-offset-3 col-md-pull-3 " data-animate-effect="fadeInLeft">
-								<span class="heading-meta">What I do?</span>
-								<h2 class="colorlib-heading">Here are some of my expertise</h2>
-							</div>
-						</div>
-						<div class="row row-pt-md">
-							<div class="col-md-4 text-center">
-								<div class="services color-1">
-									<span class="icon">
-										<i class="icon-bulb"></i>
-									</span>
-									<div class="desc">
-										<h3>Innovative Ideas</h3>
-										<p>I love to solve problems using technology</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 text-center">
-								<div class="services color-2">
-									<span class="icon">
-										<i class="icon-device-laptop"></i>
-									</span>
-									<div class="desc">
-										<h3>PC building</h3>
-										<p>I like building custom desktop</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 text-center">
-								<div class="services color-3">
-									<span class="icon">
-										<i class="icon-megaphone2"></i>
-									</span>
-									<div class="desc">
-										<h3>Discuss</h3>
-										<p>Continuously chit chat about technology</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 text-center">
-								<div class="services color-4">
-									<span class="icon">
-										<i class="icon-layers2"></i>
-									</span>
-									<div class="desc">
-										<h3>Build Website</h3>
-										<p>Single page website by using HTML Template</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 text-center">
-								<div class="services color-5">
-									<span class="icon">
-										<i class="icon-data"></i>
-									</span>
-									<div class="desc">
-										<h3>Project Setup</h3>
-										<p>Set up the initial project with required tools</p>
-									</div>
-								</div>
-							</div>
-							<div class="col-md-4 text-center">
-								<div class="services color-6">
-									<span class="icon">
-										<i class="icon-phone3"></i>
-									</span>
-									<div class="desc">
-										<h3>Passion</h3>
-										<p>Passionate about technology</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+        <div class="chapter fade-in">
+          <div class="chapter-dot"></div>
+          <div class="chapter-date">2025 - Present</div>
+          <div class="chapter-title">Chapter 5: Going Global</div>
+          <div class="chapter-company">Software Engineering Manager, Manabie International</div>
+          <div class="chapter-desc">Leading full-stack ERP delivery across Singapore, Japan, Vietnam, and the Philippines. Integrating AI tools into daily engineering workflows and sprint rituals. Setting technical direction while balancing feature delivery, experimentation, and stakeholder alignment across borders.</div>
+          <div class="chapter-tech">
+            <span>React</span><span>TypeScript</span><span>Node.js</span><span>Salesforce</span><span>Apex</span><span>Python</span><span>AI Tools</span>
+          </div>
+        </div>
 
-			
+        <div class="chapter fade-in">
+          <div class="chapter-dot"></div>
+          <div class="chapter-date">2019 - 2024</div>
+          <div class="chapter-title">Chapters 2-4: Building & Leading</div>
+          <div class="chapter-company">Senior Engineer to Engineering Manager, TeamSpirit Singapore</div>
+          <div class="chapter-desc">Grew from individual contributor to managing a team of 8. Built complex UI with React and Redux, optimized performance, enhanced CI/CD pipelines, and defined OKRs. The chapter where I discovered that great engineering is as much about people as it is about code.</div>
+          <div class="chapter-tech">
+            <span>React</span><span>Redux</span><span>TypeScript</span><span>Salesforce</span><span>Jenkins</span>
+          </div>
+        </div>
 
-            <section class="colorlib-footer" data-section="footer">
-                <div class="row">
-					<div class="col-md-2"></div>
-                    <div class="col-md-10">                      
-						<p><small>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-		Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <a href="https://colorlib.com" target="_blank">Colorlib </a>
-		<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --> </span> <span>| <a href="https://unsplash.com/" target="_blank">Unsplash.com</a></span></small></p>
-						
-					</div>
+        <div class="chapter fade-in">
+          <div class="chapter-dot"></div>
+          <div class="chapter-date">2017 - 2019</div>
+          <div class="chapter-title">Chapter 1: Going Deep</div>
+          <div class="chapter-company">Senior Software Engineer, Octus Pte Ltd</div>
+          <div class="chapter-desc">Led backend development for a SaaS applicant tracking system. Implemented enterprise Elasticsearch, managed AWS infrastructure, and built CI/CD pipelines. First taste of leading technical decisions end to end.</div>
+          <div class="chapter-tech">
+            <span>Java</span><span>Spring Boot</span><span>Angular</span><span>Elasticsearch</span><span>AWS</span><span>MongoDB</span>
+          </div>
+        </div>
 
-                </div>
-            </section>
-		<script type="text/javascript">
-	(function(){
-	window['gobot'] = window['gobot'] || function(){(window['gobot'].queue = window['gobot'].queue || []).push(arguments)}
-	var script = document.createElement('script')
-	script.async = 1
-	script.src = 'https://www.getgobot.com/app/v1/gobot-client.js'
-	var insert = document.getElementsByTagName('script')[0]
-	insert.parentNode.insertBefore(script, insert)
-	})()
-	gobot('create', '-LNnClCGuor-_2e9rU0y')
-	gobot('pageview')
-	</script>
-		</div><!-- end:colorlib-main -->
-	</div><!-- end:container-wrap -->
-	</div><!-- end:colorlib-page -->
+        <div class="chapter fade-in">
+          <div class="chapter-dot"></div>
+          <div class="chapter-date">2014 - 2017</div>
+          <div class="chapter-title">The Beginning</div>
+          <div class="chapter-company">Software Engineer, Blueorange Pte Ltd</div>
+          <div class="chapter-desc">Built enterprise learning management systems for government institutions. Real-time collaboration with WebSocket, video platform integration, and the lessons that come from maintaining production systems used by thousands.</div>
+          <div class="chapter-tech">
+            <span>Java</span><span>JSP</span><span>WebSocket</span><span>Node.js</span><span>MySQL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Owl carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- Counters -->
-	<script src="js/jquery.countTo.js"></script>
-	
-	
-	<!-- MAIN JS -->
-	<script src="js/main.js"></script>
-	
-	</body>
+  <div class="section-divider"></div>
+
+  <!-- Skills & Tools -->
+  <section class="skills fade-in" id="skills">
+    <div class="section-inner">
+      <p class="section-label">Skills & Tools</p>
+      <h2 class="section-title">What I work with</h2>
+      <div class="skills-grid">
+        <div class="skill-group fade-in delay-1">
+          <h4>Languages & Frameworks</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag trending">TypeScript</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag trending">Python</span>
+            <span class="skill-tag trending">React</span>
+            <span class="skill-tag">Redux</span>
+            <span class="skill-tag trending">Next.js</span>
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag trending">Node.js</span>
+          </div>
+        </div>
+        <div class="skill-group fade-in delay-2">
+          <h4>AI & Automation</h4>
+          <div class="skill-tags">
+            <span class="skill-tag trending">GitHub Copilot</span>
+            <span class="skill-tag trending">Claude AI</span>
+            <span class="skill-tag trending">Agentic Coding</span>
+            <span class="skill-tag trending">AI-Powered QA Automation</span>
+            <span class="skill-tag">AI-Assisted Code Review</span>
+            <span class="skill-tag">Prompt Engineering</span>
+          </div>
+        </div>
+        <div class="skill-group fade-in delay-1">
+          <h4>Infrastructure & Data</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag trending">Docker</span>
+            <span class="skill-tag">Salesforce</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Elasticsearch</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag trending">GitHub Actions</span>
+            <span class="skill-tag">RabbitMQ</span>
+            <span class="skill-tag">Nginx</span>
+          </div>
+        </div>
+        <div class="skill-group fade-in delay-2">
+          <h4>Leadership & Process</h4>
+          <div class="skill-tags">
+            <span class="skill-tag">Agile / Scrum</span>
+            <span class="skill-tag">Team Building</span>
+            <span class="skill-tag">Hiring & Recruitment</span>
+            <span class="skill-tag">OKR & KPI Setting</span>
+            <span class="skill-tag">Stakeholder Management</span>
+            <span class="skill-tag">System Design</span>
+            <span class="skill-tag">Mentorship</span>
+            <span class="skill-tag">Cross-functional Collaboration</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- Credentials -->
+  <section class="credentials fade-in" id="credentials">
+    <div class="section-inner">
+      <p class="section-label">Credentials</p>
+      <h2 class="section-title">Education & certifications</h2>
+      <div class="cred-grid">
+        <div class="cred-card fade-in delay-1">
+          <h4>Education</h4>
+          <div class="cred-item">
+            <div class="name">B.Eng Computer Engineering</div>
+            <div class="detail">Nanyang Technological University, 2011-2014</div>
+          </div>
+          <div class="cred-item">
+            <div class="name">Diploma in Manufacturing Engineering</div>
+            <div class="detail">Nanyang Polytechnic, 2008-2011</div>
+            <div class="cred-badge">&#127942; Gold Award - Singapore Robotic Games 2011</div>
+          </div>
+        </div>
+        <div class="cred-card fade-in delay-2">
+          <h4>Certifications</h4>
+          <div class="cred-item">
+            <div class="name">Salesforce Certified JavaScript Developer</div>
+          </div>
+          <div class="cred-item">
+            <div class="name">Salesforce Certified Administrator</div>
+          </div>
+          <div class="cred-item">
+            <div class="name">Certified Scrum Master (CSM)</div>
+            <div class="detail">SCRUM Alliance</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"></div>
+
+  <!-- CTA -->
+  <section class="cta fade-in" id="contact">
+    <div class="section-inner">
+      <h2>Let's build something together</h2>
+      <p>Looking for an engineering leader who ships? Let's talk.</p>
+      <div class="cta-buttons">
+        <a href="https://www.linkedin.com/in/htoomaungmaung" target="_blank" rel="noopener noreferrer" class="btn-primary">Connect on LinkedIn</a>
+        <a href="mailto:htoofranz100@gmail.com" class="btn-outline">Email Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Htoo Maung Maung. All rights reserved.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
 </html>
-
