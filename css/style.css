@@ -357,6 +357,116 @@ ul { list-style: none; }
 }
 
 /* ============================================
+   Showcase
+   ============================================ */
+.showcase { padding: var(--section-pad); }
+.showcase-intro {
+  max-width: 680px;
+  font-size: 15px;
+  color: var(--text-2);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.showcase-card {
+  display: block;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+.showcase-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary), var(--sky));
+  opacity: 0.85;
+}
+.showcase-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: 0 12px 40px rgba(59,130,246,0.12);
+}
+.showcase-card-next::before {
+  background: linear-gradient(90deg, var(--secondary), var(--accent), var(--sky));
+}
+.showcase-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.showcase-live {
+  color: #60a5fa;
+  background: rgba(59,130,246,0.1);
+  border: 1px solid rgba(59,130,246,0.18);
+}
+.showcase-next {
+  color: #c084fc;
+  background: rgba(139,92,246,0.1);
+  border: 1px solid rgba(139,92,246,0.18);
+}
+.showcase-kicker {
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 8px;
+}
+.showcase-card h3 {
+  font-size: 24px;
+  color: var(--text-1);
+  font-family: var(--font-heading);
+  margin-bottom: 12px;
+}
+.showcase-copy {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+  margin-bottom: 18px;
+}
+.showcase-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.showcase-tags span {
+  font-size: 11px;
+  color: #cbd5e1;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(59,130,246,0.08);
+  border: 1px solid rgba(59,130,246,0.12);
+}
+.showcase-card-next .showcase-tags span {
+  background: rgba(139,92,246,0.08);
+  border-color: rgba(139,92,246,0.12);
+}
+.showcase-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 24px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #60a5fa;
+}
+
+/* ============================================
    Career Journey (Timeline)
    ============================================ */
 .journey { padding: var(--section-pad); }
@@ -661,6 +771,7 @@ ul { list-style: none; }
   .impact-num { font-size: 32px; }
 
   .focus-cards { grid-template-columns: 1fr; }
+  .showcase-grid { grid-template-columns: 1fr; }
   .skills-grid { grid-template-columns: 1fr; }
   .cred-grid { grid-template-columns: 1fr; }
 
