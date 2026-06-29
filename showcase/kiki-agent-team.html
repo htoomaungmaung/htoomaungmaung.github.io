@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kiki &amp; the Agent Team | Showcase | Htoo Maung Maung</title>
+  <meta name="description" content="A personal AI engineering team: five named agents, each owning a project, routing through a chief-of-staff agent and a shared file-based brain on a self-hosted home server.">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/showcase.css">
+</head>
+<body>
+  <main class="page-shell">
+    <a class="back-link" href="../index.html#showcase">&larr; Back to showcase</a>
+
+    <section class="page-hero">
+      <p class="hero-eyebrow">Showcase / Multi-Agent System</p>
+      <h1 class="hero-title">Kiki &amp; the Agent Team</h1>
+      <p class="hero-subtitle">I didn't just adopt AI tools. I designed and deployed a personal AI engineering team: five named agents, each owning a project, all routing through a chief-of-staff agent and a shared file-based brain on my home server.</p>
+      <div class="hero-badges">
+        <span class="hero-badge success">Live and in daily use</span>
+        <span class="hero-badge">Self-hosted on atlas</span>
+        <span class="hero-badge accent">Built in 2 days</span>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <p class="section-kicker">What it is</p>
+      <h2 class="section-title">An org chart, not a pile of prompts</h2>
+      <p class="section-copy">Most people use AI as a single assistant they re-explain themselves to every session. I designed mine as a team. Each project has a dedicated agent that knows that codebase. A chief-of-staff agent, Kiki, coordinates them and owns the shared memory. I talk to one agent; the work routes to the right specialist and the context survives across sessions, devices, and even a change of model. It runs entirely on my own hardware with no paid hosting for the agent layer.</p>
+    </section>
+
+    <section class="section-block">
+      <p class="section-kicker">The team</p>
+      <h2 class="section-title">One chief of staff, four project specialists</h2>
+      <p class="section-copy" style="margin-bottom:20px;">Each agent lives in its own project repo at <code>.claude/agents/&lt;name&gt;.md</code> and follows a shared convention file so they all interoperate. Kiki is the hub; the rest are spokes.</p>
+      <div class="toolstack">
+        <div class="tool-card">
+          <div class="tool-emoji">&#x1F9ED;</div>
+          <div class="tool-name">Kiki</div>
+          <div class="tool-role">Chief of staff. Owns the shared brain, runs daily intake, routes work to the team.</div>
+          <span class="tool-badge tool-cowork">Hub</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-emoji">&#x1F50E;</div>
+          <div class="tool-name">Juno</div>
+          <div class="tool-role">Owns crown-jewels, the work microservices monorepo.</div>
+          <span class="tool-badge tool-obsidian">Spoke</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-emoji">&#x1F6E0;</div>
+          <div class="tool-name">Jarvis</div>
+          <div class="tool-role">Owns the atlas homelab infrastructure: docker, ansible, backups.</div>
+          <span class="tool-badge tool-obsidian">Spoke</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-emoji">&#x1F310;</div>
+          <div class="tool-name">Toby</div>
+          <div class="tool-role">Owns this portfolio site: content, layout, and deploys.</div>
+          <span class="tool-badge tool-obsidian">Spoke</span>
+        </div>
+      </div>
+      <div class="detail-grid" style="margin-top:16px;">
+        <div class="detail-card">
+          <p class="card-label">Also on the roster</p>
+          <h3 class="card-title">Plato</h3>
+          <p class="card-text">Owns erp-web-form, the Salesforce enterprise platform. Every new agent is created from a shared template so it links back to Kiki and follows the same conventions, which means the team grows without re-architecting.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pipeline">
+      <div class="pipeline-title">&#x1F501; Hub-and-spoke routing</div>
+      <div class="pipeline-flow">
+        <div class="pipeline-node">
+          <div class="node-icon">&#x1F527;</div>
+          <div class="node-title">Project agent works</div>
+          <div class="node-sub">Juno, Jarvis, Toby, Plato</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-node">
+          <div class="node-icon">&#x1F4E5;</div>
+          <div class="node-title">Writes a capture</div>
+          <div class="node-sub">franzy-os/inbox/</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-node">
+          <div class="node-icon">&#x1F9ED;</div>
+          <div class="node-title">Kiki reads + files</div>
+          <div class="node-sub">daily intake</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-node">
+          <div class="node-icon">&#x1F9E0;</div>
+          <div class="node-title">Shared brain</div>
+          <div class="node-sub">franzy-os, filed</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-node">
+          <div class="node-icon">&#x1F916;</div>
+          <div class="node-title">Any agent reads it</div>
+          <div class="node-sub">shared context</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="detail-grid two-col" style="margin-top:24px;">
+      <div class="detail-card">
+        <p class="card-label">The shared brain</p>
+        <h3 class="card-title">franzy-os, a file-based second brain</h3>
+        <p class="card-text">An <strong>OKF v0.1</strong> markdown bundle with structured memory, runbooks, and life domains. Any LLM reads the same plain files; there is no proprietary memory format to lock into. It auto-commits and pushes to GitHub nightly at 23:00 SGT via cron on atlas, so it is designed to survive a full machine rebuild.</p>
+        <ul class="chip-list" style="margin-top:14px;">
+          <li>OKF v0.1</li>
+          <li>Markdown + YAML</li>
+          <li>Model-agnostic</li>
+          <li>Nightly auto-backup</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <p class="card-label">The implementation arm</p>
+        <h3 class="card-title">Cursor dispatch pipeline</h3>
+        <p class="card-text"><code>dispatch-cursor.sh</code> sends an implementation plan to a Cursor agent inside an isolated git worktree; artifacts are logged to <code>.dispatch/STATUS.md</code>, and up to two workers run in parallel. It uses my Cursor subscription rather than API tokens, which keeps AI coding cost separate and controlled. It never pushes or merges; I review every diff.</p>
+        <ul class="chip-list" style="margin-top:14px;">
+          <li>Isolated worktrees</li>
+          <li>Parallel workers</li>
+          <li>Human reviews the diff</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bottom-grid">
+      <div class="box">
+        <div class="section-header">Why I built it this way</div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>One point of contact.</strong> I manage one agent, not five. Kiki routes work so I never juggle context across projects.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Context that survives.</strong> The brain is plain files, so memory carries across sessions, devices, and models.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>A markdown audit trail.</strong> Routing happens through an inbox folder, not a hidden service. The whole flow is inspectable.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Cost discipline.</strong> Coding work goes to Cursor on a subscription; the agent layer is self-hosted. No surprise bills.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Grows by template.</strong> New agents drop in from a shared spec, so the org scales without redesign.</div></div>
+      </div>
+      <div class="box">
+        <div class="section-header">The foundation</div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>atlas.</strong> A self-hosted Ubuntu home server, reached over Tailscale. No paid hosting for the agent layer.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Cron + git.</strong> Scheduled jobs handle backups and upkeep; everything meaningful lives in version control.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Built in two days.</strong> Stood up from a blank slate on 28&ndash;29 June 2026, iteratively, phase by phase.</div></div>
+        <div class="note">Honest scope: the agents consume established MCP integrations (Jira, Slack, Confluence, Drive) rather than authoring new MCP servers, and a human approval gate sits in front of any change that ships.</div>
+      </div>
+    </div>
+
+    <div class="page-links">
+      <a class="page-button" href="../index.html#showcase">Back to homepage showcase</a>
+      <a class="page-button secondary" href="franzy-os.html">Deeper dive: the franzy-os workflow</a>
+    </div>
+  </main>
+</body>
+</html>
