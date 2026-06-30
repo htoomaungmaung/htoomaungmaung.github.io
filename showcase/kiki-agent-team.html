@@ -38,25 +38,25 @@
       <p class="section-copy" style="margin-bottom:20px;">Each agent lives in its own project repo at <code>.claude/agents/&lt;name&gt;.md</code> and follows a shared convention file so they all interoperate. Kiki is the hub; the rest are spokes.</p>
       <div class="toolstack">
         <div class="tool-card">
-          <div class="tool-emoji">&#x1F9ED;</div>
+          <img class="agent-avatar" src="../images/agents/kiki.svg" alt="Kiki avatar" width="60" height="60">
           <div class="tool-name">Kiki</div>
           <div class="tool-role">Chief of staff. Owns the shared brain, runs daily intake, routes work to the team.</div>
           <span class="tool-badge tool-cowork">Hub</span>
         </div>
         <div class="tool-card">
-          <div class="tool-emoji">&#x1F50E;</div>
+          <img class="agent-avatar" src="../images/agents/juno.svg" alt="Juno avatar" width="60" height="60">
           <div class="tool-name">Juno</div>
           <div class="tool-role">Owns crown-jewels, the work microservices monorepo.</div>
           <span class="tool-badge tool-obsidian">Spoke</span>
         </div>
         <div class="tool-card">
-          <div class="tool-emoji">&#x1F6E0;</div>
+          <img class="agent-avatar" src="../images/agents/jarvis.svg" alt="Jarvis avatar" width="60" height="60">
           <div class="tool-name">Jarvis</div>
           <div class="tool-role">Owns the atlas homelab infrastructure: docker, ansible, backups.</div>
           <span class="tool-badge tool-obsidian">Spoke</span>
         </div>
         <div class="tool-card">
-          <div class="tool-emoji">&#x1F310;</div>
+          <img class="agent-avatar" src="../images/agents/toby.svg" alt="Toby avatar" width="60" height="60">
           <div class="tool-name">Toby</div>
           <div class="tool-role">Owns this portfolio site: content, layout, and deploys.</div>
           <span class="tool-badge tool-obsidian">Spoke</span>
@@ -65,7 +65,10 @@
       <div class="detail-grid" style="margin-top:16px;">
         <div class="detail-card">
           <p class="card-label">Also on the roster</p>
-          <h3 class="card-title">Plato</h3>
+          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+            <img src="../images/agents/plato.svg" alt="Plato avatar" width="48" height="48">
+            <h3 class="card-title" style="margin:0;">Plato</h3>
+          </div>
           <p class="card-text">Owns erp-web-form, the Salesforce enterprise platform. Every new agent is created from a shared template so it links back to Kiki and follows the same conventions, which means the team grows without re-architecting.</p>
         </div>
       </div>

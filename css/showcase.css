@@ -594,6 +594,68 @@ a:hover { color: #93c5fd; }
 
 .rule-text strong { color: var(--text-1); }
 
+.agent-avatar {
+  width: 60px;
+  height: 60px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+.agent-org {
+  margin: 6px 0 4px;
+}
+
+.agent-hub {
+  display: flex;
+  justify-content: center;
+}
+
+.agent-connector {
+  width: 2px;
+  height: 24px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, var(--border-strong), rgba(148,163,184,0.12));
+}
+
+.agent-spokes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.agent-node {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.agent-hub .agent-node {
+  width: 168px;
+  border-color: var(--border-strong);
+}
+
+.agent-node img {
+  width: 52px;
+  height: 52px;
+  display: block;
+  margin: 0 auto;
+}
+
+.agent-node .agent-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-top: 6px;
+}
+
+.agent-node .agent-role {
+  font-size: 10px;
+  color: var(--text-4);
+  margin-top: 2px;
+}
+
 @media screen and (max-width: 960px) {
   .detail-grid.two-col,
   .rhythms,
@@ -617,4 +679,5 @@ a:hover { color: #93c5fd; }
   .page-shell { padding: 24px 16px 40px; }
   .page-hero { padding: 24px 20px; }
   .hero-title { font-size: 34px; }
+  .agent-spokes { grid-template-columns: repeat(2, 1fr); }
 }

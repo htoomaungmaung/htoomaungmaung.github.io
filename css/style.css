@@ -737,6 +737,31 @@ ul { list-style: none; }
   color: var(--text-3);
   border-top: 1px solid var(--border);
 }
+.footer-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: var(--text-2);
+}
+.footer-credit img {
+  width: 26px;
+  height: 26px;
+}
+.footer-credit a {
+  color: #93c5fd;
+  text-decoration: none;
+}
+.footer-credit a:hover { color: #bfdbfe; }
+
+.showcase-card .card-avatar {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 46px;
+  height: 46px;
+}
 
 /* ============================================
    Responsive
