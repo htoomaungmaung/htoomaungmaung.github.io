@@ -239,74 +239,6 @@
   }
 
   // ============================================
-  // Contact Form
-  // ============================================
-  function initContactForm() {
-    var form = document.getElementById('contactForm');
-    if (!form) return;
-    var status = document.getElementById('formStatus');
-    var els = form.elements;
-
-    function setStatus(msg, type) {
-      if (!status) return;
-      status.textContent = msg;
-      status.className = 'form-status ' + (type === 'error' ? 'is-error' : 'is-ok');
-    }
-
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      var name = (els['name'].value || '').trim();
-      var email = (els['email'].value || '').trim();
-      var message = (els['message'].value || '').trim();
-      if (!name || !email || !message) {
-        setStatus('Please fill in your name, email, and message.', 'error');
-        return;
-      }
-
-      var key = (els['access_key'].value || '').trim();
-      var configured = key && key.indexOf('YOUR_') !== 0;
-
-      // Fallback when no form service is configured yet: open the visitor's
-      // email client with the message prefilled.
-      if (!configured) {
-        var subject = encodeURIComponent('Portfolio message from ' + name);
-        var body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
-        window.location.href = 'mailto:htoofranz100@gmail.com?subject=' + subject + '&body=' + body;
-        setStatus('Opening your email app so you can send the message...', 'ok');
-        return;
-      }
-
-      // Configured: submit to Web3Forms without leaving the page.
-      setStatus('Sending...', 'ok');
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify({
-          access_key: key,
-          subject: 'New message from your portfolio site',
-          from_name: 'Portfolio site',
-          name: name,
-          email: email,
-          message: message,
-          botcheck: els['botcheck'] ? els['botcheck'].checked : false
-        })
-      }).then(function (r) {
-        return r.json();
-      }).then(function (res) {
-        if (res && res.success) {
-          form.reset();
-          setStatus('Thanks! Your message is on its way. I will follow up soon.', 'ok');
-        } else {
-          setStatus('Something went wrong. Please email me directly instead.', 'error');
-        }
-      }).catch(function () {
-        setStatus('Network error. Please email me directly instead.', 'error');
-      });
-    });
-  }
-
-  // ============================================
   // Initialize Everything
   // ============================================
   document.addEventListener('DOMContentLoaded', function () {
@@ -315,6 +247,5 @@
     initCountUp();
     initStickyNav();
     initTimelineDraw();
-    initContactForm();
   });
 })();
