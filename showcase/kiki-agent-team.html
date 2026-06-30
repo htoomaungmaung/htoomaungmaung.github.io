@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kiki &amp; the Agent Team | Showcase | Htoo Maung Maung</title>
-  <meta name="description" content="A personal AI engineering team: five named agents, each owning a project, routing through a chief-of-staff agent and a shared file-based brain on a self-hosted home server.">
+  <meta name="description" content="A personal AI engineering team: six named agents across career, work, infrastructure, and portfolio work, routing through a chief-of-staff agent and a shared file-based brain on a self-hosted home server.">
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,7 +19,7 @@
     <section class="page-hero">
       <p class="hero-eyebrow">Showcase / Multi-Agent System</p>
       <h1 class="hero-title">Kiki &amp; the Agent Team</h1>
-      <p class="hero-subtitle">I didn't just adopt AI tools. I designed and deployed a personal AI engineering team: five named agents, each owning a project, all routing through a chief-of-staff agent and a shared file-based brain on my home server.</p>
+      <p class="hero-subtitle">I didn't just adopt AI tools. I designed and deployed a personal AI engineering team: six named agents across career, work, infrastructure, and portfolio work, all routing through a chief-of-staff agent and a shared file-based brain on my home server.</p>
       <div class="hero-badges">
         <span class="hero-badge success">Live and in daily use</span>
         <span class="hero-badge">Self-hosted on atlas</span>
@@ -30,19 +30,25 @@
     <section class="section-block">
       <p class="section-kicker">What it is</p>
       <h2 class="section-title">An org chart, not a pile of prompts</h2>
-      <p class="section-copy">Most people use AI as a single assistant they re-explain themselves to every session. I designed mine as a team. Each project has a dedicated agent that knows that codebase. A chief-of-staff agent, Kiki, coordinates them and owns the shared memory. I talk to one agent; the work routes to the right specialist and the context survives across sessions, devices, and even a change of model. It runs entirely on my own hardware with no paid hosting for the agent layer.</p>
+      <p class="section-copy">Most people use AI as a single assistant they re-explain themselves to every session. I designed mine as a team. Each major domain has a dedicated agent that knows its files, codebase, or career context. A chief-of-staff agent, Kiki, coordinates them and owns the shared memory. I talk to one agent; the work routes to the right specialist and the context survives across sessions, devices, and even a change of model. It runs entirely on my own hardware with no paid hosting for the agent layer.</p>
     </section>
 
     <section class="section-block">
       <p class="section-kicker">The team</p>
-      <h2 class="section-title">One chief of staff, four project specialists</h2>
-      <p class="section-copy" style="margin-bottom:20px;">Each agent lives in its own project repo at <code>.claude/agents/&lt;name&gt;.md</code> and follows a shared convention file so they all interoperate. Kiki is the hub; the rest are spokes.</p>
+      <h2 class="section-title">One chief of staff, five specialists</h2>
+      <p class="section-copy" style="margin-bottom:20px;">Each specialist lives close to the domain it owns and follows a shared convention file so the agents interoperate. Kiki is the hub; the rest are spokes.</p>
       <div class="toolstack">
         <div class="tool-card">
           <img class="agent-avatar" src="../images/agents/kiki.svg" alt="Kiki avatar" width="60" height="60">
           <div class="tool-name">Kiki</div>
           <div class="tool-role">Chief of staff. Owns the shared brain, runs daily intake, routes work to the team.</div>
           <span class="tool-badge tool-cowork">Hub</span>
+        </div>
+        <div class="tool-card">
+          <img class="agent-avatar" src="../images/agents/mira.svg" alt="Mira avatar" width="60" height="60">
+          <div class="tool-name">Mira</div>
+          <div class="tool-role">Owns career progression: strategy, resumes, interviews, portfolio positioning, and negotiation prep.</div>
+          <span class="tool-badge tool-obsidian">Spoke</span>
         </div>
         <div class="tool-card">
           <img class="agent-avatar" src="../images/agents/juno.svg" alt="Juno avatar" width="60" height="60">
@@ -62,17 +68,14 @@
           <div class="tool-role">Owns this portfolio site: content, layout, and deploys.</div>
           <span class="tool-badge tool-obsidian">Spoke</span>
         </div>
-      </div>
-      <div class="detail-grid" style="margin-top:16px;">
-        <div class="detail-card">
-          <p class="card-label">Also on the roster</p>
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-            <img src="../images/agents/plato.svg" alt="Plato avatar" width="48" height="48">
-            <h3 class="card-title" style="margin:0;">Plato</h3>
-          </div>
-          <p class="card-text">Owns erp-web-form, the Salesforce enterprise platform. Every new agent is created from a shared template so it links back to Kiki and follows the same conventions, which means the team grows without re-architecting.</p>
+        <div class="tool-card">
+          <img class="agent-avatar" src="../images/agents/plato.svg" alt="Plato avatar" width="60" height="60">
+          <div class="tool-name">Plato</div>
+          <div class="tool-role">Owns erp-web-form, the Salesforce enterprise platform.</div>
+          <span class="tool-badge tool-obsidian">Spoke</span>
         </div>
       </div>
+      <p class="section-copy" style="margin-top:16px;">Every new agent is created from a shared template so it links back to Kiki and follows the same conventions, which means the team grows without re-architecting.</p>
     </section>
 
     <section class="pipeline">
@@ -81,7 +84,7 @@
         <div class="pipeline-node">
           <div class="node-icon">&#x1F527;</div>
           <div class="node-title">Project agent works</div>
-          <div class="node-sub">Juno, Jarvis, Toby, Plato</div>
+          <div class="node-sub">Mira, Juno, Jarvis, Toby, Plato</div>
         </div>
         <div class="pipeline-arrow">&rarr;</div>
         <div class="pipeline-node">
@@ -137,7 +140,7 @@
     <div class="bottom-grid">
       <div class="box">
         <div class="section-header">Why I built it this way</div>
-        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>One point of contact.</strong> I manage one agent, not five. Kiki routes work so I never juggle context across projects.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>One point of contact.</strong> I manage one agent, not six. Kiki routes work so I never juggle context across projects.</div></div>
         <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Context that survives.</strong> The brain is plain files, so memory carries across sessions, devices, and models.</div></div>
         <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>A markdown audit trail.</strong> Routing happens through an inbox folder, not a hidden service. The whole flow is inspectable.</div></div>
         <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Cost discipline.</strong> Coding work goes to Cursor on a subscription; the agent layer is self-hosted. No surprise bills.</div></div>
