@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>erp-web-form AI Council | Showcase | Htoo Maung Maung</title>
+  <meta name="description" content="How I reduced bug-fix cycle time by 80% on a Salesforce form platform by designing an AI Council with distinct agent roles and a 6-stage human-approved pipeline.">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/showcase.css">
+</head>
+<body>
+  <main class="page-shell">
+    <a class="back-link" href="../index.html#showcase">&larr; Back to showcase</a>
+
+    <section class="page-hero">
+      <p class="hero-eyebrow">Showcase / AI Engineering System</p>
+      <h1 class="hero-title">erp-web-form AI Council</h1>
+      <p class="hero-subtitle">I didn't just adopt AI tools. I designed an explicit org chart for them: Claude Opus as architect, Cursor as implementer, GitHub CLI as reviewer, NotebookLM as documentation lead. One human approval gate, four AI roles, one platform.</p>
+      <div class="hero-badges">
+        <span class="hero-badge success">Live at Manabie</span>
+        <span class="hero-badge">Salesforce + React</span>
+        <span class="hero-badge accent">~80% faster bug fix</span>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <p class="section-kicker">What it is</p>
+      <h2 class="section-title">A structured multi-agent SDLC, not "use AI to write code"</h2>
+      <p class="section-copy">Running a complex enterprise form platform on Salesforce meant recurring friction: QA bugs needed fast triage, architecture calls needed structured review, documentation drifted out of sync, and every issue made me re-read context before acting. Each cycle burned roughly four hours from bug report to verified fix. The answer was not a smarter prompt. It was an explicit org chart for AI: distinct roles, defined input and output contracts, and a single human approval gate.</p>
+    </section>
+
+    <section class="section-block">
+      <p class="section-kicker">The team</p>
+      <h2 class="section-title">The AI Council</h2>
+      <p class="section-copy" style="margin-bottom:20px;">Four AI agents, each with one job and a clear contract. There is never ambiguity about which tool to reach for.</p>
+      <div class="toolstack">
+        <div class="tool-card">
+          <div class="tool-emoji">&#x1F9E0;</div>
+          <div class="tool-name">Claude Opus</div>
+          <div class="tool-role">Architect and spec reviewer. Architecture decisions, complex tradeoffs, spec validation.</div>
+          <span class="tool-badge tool-cowork">Architect</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-emoji">&#x1F527;</div>
+          <div class="tool-name">Cursor Agent</div>
+          <div class="tool-role">Implementation. Code generation, refactor, and test scaffolding in isolated worktrees.</div>
+          <span class="tool-badge tool-obsidian">Implementer</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-emoji">&#x1F50D;</div>
+          <div class="tool-name">GitHub CLI</div>
+          <div class="tool-role">Code review. PR diff review, comment generation, approval workflow.</div>
+          <span class="tool-badge tool-tasks">Reviewer</span>
+        </div>
+        <div class="tool-card">
+          <div class="tool-emoji">&#x1F4DA;</div>
+          <div class="tool-name">NotebookLM</div>
+          <div class="tool-role">Stakeholder documents. Confluence and NotebookLM sync, stakeholder-facing summaries.</div>
+          <span class="tool-badge tool-calendar">Docs lead</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <p class="section-kicker">The workflow</p>
+      <h2 class="section-title">The 6-stage bug-fix pipeline</h2>
+      <p class="section-copy" style="margin-bottom:20px;">Before: QA files a bug, I read context, investigate, fix, review, test. Roughly four hours. After: senior-engineer involvement is concentrated in one stage, not spread across six.</p>
+
+      <div class="step">
+        <div class="stage-num">1</div>
+        <div>
+          <div class="step-title">Triage</div>
+          <div class="step-desc">Claude Code with Jira MCP reads the issue, pulls the affected code, and classifies it: blocker, regression, or enhancement.</div>
+          <span class="step-tool tool-cowork">Claude Code</span>
+          <span class="step-tool tool-tasks">Jira MCP</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="stage-num">2</div>
+        <div>
+          <div class="step-title">Root cause</div>
+          <div class="step-desc">Trace the failure path, surface the failing invariant, and propose fix candidates.</div>
+          <span class="step-tool tool-cowork">Claude Code</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="stage-num">3</div>
+        <div>
+          <div class="step-title">Implementation</div>
+          <div class="step-desc">Cursor writes the fix in a throw-away isolated worktree. Nothing touches main until it is approved.</div>
+          <span class="step-tool tool-obsidian">Cursor Agent</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="stage-num">4</div>
+        <div>
+          <div class="step-title">Multi-lens review</div>
+          <div class="step-desc">Three perspectives in sequence, each a separate structured prompt with a pass or fail verdict: correctness, security, simplicity.</div>
+          <span class="step-tool tool-cowork">Claude Code</span>
+        </div>
+      </div>
+
+      <div class="step gate">
+        <div class="stage-num">5</div>
+        <div>
+          <div class="step-title">Human approval gate</div>
+          <div class="step-desc">I read the summary diff and the three review verdicts, then give one approval, not six. This is a hard gate, not a suggestion.</div>
+          <span class="step-tool tool-manual">franzy</span>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="stage-num">6</div>
+        <div>
+          <div class="step-title">Merge and doc sync</div>
+          <div class="step-desc">Merge the PR, trigger doc sync to Confluence and NotebookLM, and close the Jira ticket.</div>
+          <span class="step-tool tool-cowork">Claude Code</span>
+          <span class="step-tool tool-tasks">Sync hooks</span>
+        </div>
+      </div>
+
+      <div class="note">Stage 5 is the constant. The senior engineer is the approval gate, not a step in every stage.</div>
+    </section>
+
+    <div class="detail-grid two-col">
+      <div class="detail-card">
+        <p class="card-label">Layer 4</p>
+        <h3 class="card-title">The AI-readable context layer</h3>
+        <p class="card-text">The system does not re-explain itself every session. A machine-readable context layer lets engineers and AI tools navigate architecture, rules, and release knowledge without rescanning the codebase. Estimated onboarding: days to hours.</p>
+      </div>
+      <div class="box">
+        <div class="section-header">What is in the layer</div>
+        <ul class="detail-list">
+          <li><strong>context.md</strong> &mdash; project state, sprint goal, known risks, and team contacts as a machine-readable briefing.</li>
+          <li><strong>Skill files</strong> &mdash; reusable prompt recipes for recurring tasks: bug triage, PR review, doc sync.</li>
+          <li><strong>Hooks</strong> &mdash; file-save triggers that run validators and sync automatically.</li>
+          <li><strong>Validators</strong> &mdash; structured output checks that reject malformed AI completions before they reach Stage 5.</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="section-block">
+      <p class="section-kicker">Outcomes</p>
+      <h2 class="section-title">Results</h2>
+      <div class="toolstack">
+        <div class="tool-card">
+          <p class="card-label">Bug-fix cycle</p>
+          <div class="metric-value">45 min</div>
+          <div class="metric-before">from ~4 hours</div>
+        </div>
+        <div class="tool-card">
+          <p class="card-label">Docs in sync</p>
+          <div class="metric-value">57 pages</div>
+          <div class="metric-before">from manual, often stale</div>
+        </div>
+        <div class="tool-card">
+          <p class="card-label">Doc update effort</p>
+          <div class="metric-value">~95%</div>
+          <div class="metric-before">reduction</div>
+        </div>
+        <div class="tool-card">
+          <p class="card-label">Approval touchpoints</p>
+          <div class="metric-value">1 per fix</div>
+          <div class="metric-before">from multiple across the cycle</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="bottom-grid">
+      <div class="box">
+        <div class="section-header">What I did not do</div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Did not skip fundamentals.</strong> The secure form engine shipped first; AI capabilities are a separate, later layer in the roadmap.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Did not remove the human.</strong> Stage 5 is a hard approval gate, not a suggestion.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Did not over-automate.</strong> Each stage has a clear contract and fails explicitly rather than degrading silently.</div></div>
+      </div>
+      <div class="box">
+        <div class="section-header">What is next</div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Prompt-assisted schema generation.</strong> A schema UI builder where users describe a form in plain language and AI proposes a JSON schema for human review before activation.</div></div>
+        <div class="note" style="border-left-color:var(--secondary);background:rgba(139,92,246,0.06);color:#c4b5fd;">Planned, not shipped. It sits on top of the stable non-AI platform, guardrail-first: strict output format, validation, and human review before any AI output reaches production data.</div>
+      </div>
+    </div>
+
+    <div class="page-links">
+      <a class="page-button" href="../index.html#showcase">Back to homepage showcase</a>
+      <a class="page-button secondary" href="atlas-kiki-org.html">The same philosophy at home: Atlas Agentic OS</a>
+    </div>
+  </main>
+</body>
+</html>

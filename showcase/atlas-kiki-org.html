@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atlas Agentic OS | Showcase | Htoo Maung Maung</title>
+  <meta name="description" content="I built a personal AI operating system on a self-hosted home server: a hub-and-spoke agent team, a file-based second brain, async inbox communication, and zero vendor lock-in.">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/showcase.css">
+</head>
+<body>
+  <main class="page-shell">
+    <a class="back-link" href="../index.html#showcase">&larr; Back to showcase</a>
+
+    <section class="page-hero">
+      <p class="hero-eyebrow">Showcase / Personal AI Infrastructure</p>
+      <h1 class="hero-title">Atlas Agentic OS</h1>
+      <p class="hero-subtitle">I run a personal AI operating system on bare metal. Five named agents, a shared file-based knowledge system, async inbox communication, and no always-on process. It works across devices and survives a change of model.</p>
+      <div class="hero-badges">
+        <span class="hero-badge">Self-hosted on atlas</span>
+        <span class="hero-badge success">Live and in daily use</span>
+        <span class="hero-badge accent">Zero vendor lock-in</span>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <p class="section-kicker">The problem</p>
+      <h2 class="section-title">Context dies at session end</h2>
+      <p class="section-copy">Most people use AI as a single assistant they re-explain context to every session. The window fills, the session ends, and the next conversation starts cold. Across a work monorepo, a personal site, a homelab, and a second brain, this compounds: each project has different conventions, state, and history that no single assistant can hold.</p>
+    </section>
+
+    <section class="section-block">
+      <p class="section-kicker">The team</p>
+      <h2 class="section-title">A hub-and-spoke agent org</h2>
+      <p class="section-copy" style="margin-bottom:18px;">One chief of staff coordinates; one named agent owns each project. I talk to one agent and the work routes to the right specialist.</p>
+      <pre class="code-block">                  Kiki  (chief of staff)
+                  franzy-os / OKF brain
+                 /     |      |      \
+              Juno   Jarvis  Toby   Plato
+         crown-jewels atlas  site  erp-web-form</pre>
+      <div class="page-links" style="margin-top:18px;">
+        <a class="page-button secondary" href="kiki-agent-team.html">See the full team, agent by agent &rarr;</a>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <p class="section-kicker">The knowledge layer</p>
+      <h2 class="section-title">franzy-os, an OKF second brain</h2>
+      <p class="section-copy" style="margin-bottom:18px;">A file-based second brain structured as an OKF (Open Knowledge Format) bundle: markdown with YAML frontmatter, organized as a graph. Every concept has a <code>type</code>; cross-links use bundle-relative paths, not external URLs. The intelligence is in the structure and the manual, not in any specific model. Swap the model and nothing breaks, because all context is in files any model can read.</p>
+      <pre class="code-block">career/      portfolio, resumes, interview prep, applications
+learning/    study plans and notes
+life/        milestones, documents, immigration, travel
+notes/       daily captures, meeting notes
+projects/    project index
+references/  external references and standards
+runbooks/    step-by-step procedures
+systems/     system descriptions (atlas, erp-web-form...)
+tasks/       open loops and tracked commitments</pre>
+    </section>
+
+    <section class="pipeline">
+      <div class="pipeline-title">&#x1F501; The communication pattern: inbox/</div>
+      <div class="pipeline-flow">
+        <div class="pipeline-node">
+          <div class="node-icon">&#x1F4E5;</div>
+          <div class="node-title">Drop a file</div>
+          <div class="node-sub">any agent or franzy</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-node">
+          <div class="node-icon">&#x1F9ED;</div>
+          <div class="node-title">Kiki reads</div>
+          <div class="node-sub">next session</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-node">
+          <div class="node-icon">&#x1F5C2;</div>
+          <div class="node-title">Files or holds</div>
+          <div class="node-sub">asks if ambiguous</div>
+        </div>
+        <div class="pipeline-arrow">&rarr;</div>
+        <div class="pipeline-node">
+          <div class="node-icon">&#x2705;</div>
+          <div class="node-title">Reports back</div>
+          <div class="node-sub">git-timestamped</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="detail-grid" style="margin-top:24px;">
+      <div class="box">
+        <div class="section-header">Why the inbox pattern works</div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>No always-on process.</strong> No daemon, no event bus, no hosted queue.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Cross-device by default.</strong> The inbox lives in the git repo; any session on any machine can read it.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Auditable.</strong> Every filed artifact carries a git timestamp.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Safe.</strong> Ambiguous items wait; they are never silently guessed and misfiled.</div></div>
+      </div>
+    </div>
+
+    <div class="detail-grid two-col">
+      <div class="detail-card">
+        <p class="card-label">The foundation</p>
+        <h3 class="card-title">atlas, bare-metal Ubuntu</h3>
+        <p class="card-text">A self-hosted home server backing the whole system. AMD Ryzen 7, 48 GB RAM, 2 TB NVMe. 12+ Dockerized services for media, photos, file sync, backups, and AI agent supervision.</p>
+        <ul class="chip-list" style="margin-top:14px;">
+          <li>Ryzen 7</li>
+          <li>48 GB RAM</li>
+          <li>2 TB NVMe</li>
+          <li>12+ services</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <p class="card-label">Access and safety</p>
+        <h3 class="card-title">Private by design</h3>
+        <p class="card-text">Zero public-facing ports; all access via Tailscale. Omnigent MCP runs agent orchestration as a Dockerized service on PostgreSQL with a sandboxed systemd runner wired to Claude Code. Multi-tier backup: nightly rclone to Google Drive, Restic snapshots, offsite NVMe rotation.</p>
+        <ul class="chip-list" style="margin-top:14px;">
+          <li>Tailscale only</li>
+          <li>Omnigent MCP</li>
+          <li>Multi-tier backup</li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="section-block">
+      <p class="section-kicker">How I think</p>
+      <h2 class="section-title">Design principles</h2>
+      <div class="detail-grid two-col" style="margin-bottom:0;">
+        <div class="detail-card">
+          <h3 class="card-title">File-based over daemons</h3>
+          <p class="card-text">A markdown file over a script, a STATUS.md table over a bot, an inbox folder over an event queue.</p>
+        </div>
+        <div class="detail-card">
+          <h3 class="card-title">Model-agnostic by design</h3>
+          <p class="card-text">All intelligence lives in the operating manual and the OKF structure. A different model reads the same files and follows the same conventions.</p>
+        </div>
+        <div class="detail-card">
+          <h3 class="card-title">No vendor lock-in</h3>
+          <p class="card-text">The system runs on a private server. No hosted AI infra, no proprietary agent platform beyond the model API itself.</p>
+        </div>
+        <div class="detail-card">
+          <h3 class="card-title">Human in the loop</h3>
+          <p class="card-text">Agents draft, prepare, and stage but never send a message, post a comment, or push to a remote without explicit approval.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="page-links">
+      <a class="page-button" href="../index.html#showcase">Back to homepage showcase</a>
+      <a class="page-button secondary" href="erp-web-form-ai-council.html">The same design philosophy applied at work &rarr;</a>
+    </div>
+  </main>
+</body>
+</html>

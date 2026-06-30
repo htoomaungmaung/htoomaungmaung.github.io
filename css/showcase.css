@@ -236,6 +236,55 @@ a:hover { color: #93c5fd; }
   font-size: 13px;
 }
 
+.code-block {
+  background: #0d1118;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 0;
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-2);
+  white-space: pre;
+}
+
+.stage-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-1);
+  flex-shrink: 0;
+  background: linear-gradient(135deg, rgba(59,130,246,0.85), rgba(139,92,246,0.85));
+}
+
+.step.gate .stage-num {
+  background: linear-gradient(135deg, rgba(251,191,36,0.9), rgba(245,158,11,0.9));
+  color: #1a1205;
+}
+
+.metric-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin: 4px 0 6px;
+  background: linear-gradient(135deg, #60a5fa, #c4b5fd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metric-before {
+  font-size: 12px;
+  color: var(--text-4);
+}
+
 .page-links {
   display: flex;
   flex-wrap: wrap;
