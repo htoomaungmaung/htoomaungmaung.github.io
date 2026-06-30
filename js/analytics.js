@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  var GA_ID = 'G-XXXXXXXXXX';
+  var GA_ID = 'G-46QRYQH4ZT';
 
   if (!GA_ID || GA_ID === 'G-XXXXXXXXXX') return; // not configured yet
 

@@ -8,7 +8,7 @@
 (function () {
   'use strict';
 
-  var WEB3FORMS_KEY = 'YOUR_WEB3FORMS_KEY';
+  var WEB3FORMS_KEY = 'cc9aeb13-2d53-421d-8c73-d8205a606366';
   var DEST_EMAIL = 'htoofranz100@gmail.com';
 
   var CSS = [
