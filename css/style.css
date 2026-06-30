@@ -730,6 +730,68 @@ ul { list-style: none; }
 /* ============================================
    Footer
    ============================================ */
+.form-divider {
+  margin: 30px 0 16px;
+  font-size: 13px;
+  color: var(--text-3);
+  position: relative;
+}
+.contact-form {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: left;
+}
+.contact-form .form-row {
+  display: flex;
+  gap: 12px;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  color: var(--text-1);
+  font-family: var(--font-body);
+  font-size: 14px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.contact-form input::placeholder,
+.contact-form textarea::placeholder { color: var(--text-3); }
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--border-hover);
+  background: rgba(255,255,255,0.05);
+}
+.contact-form textarea { resize: vertical; min-height: 96px; }
+.contact-form button {
+  width: 100%;
+  justify-content: center;
+  margin-top: 2px;
+}
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.form-status {
+  font-size: 13px;
+  margin: 12px 0 0;
+  min-height: 18px;
+  text-align: center;
+}
+.form-status.is-ok { color: var(--success); }
+.form-status.is-error { color: #f87171; }
+@media screen and (max-width: 560px) {
+  .contact-form .form-row { flex-direction: column; gap: 0; }
+}
+
 .footer {
   padding: 24px 40px;
   text-align: center;
