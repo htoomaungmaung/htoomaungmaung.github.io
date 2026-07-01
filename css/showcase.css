@@ -680,4 +680,20 @@ a:hover { color: #93c5fd; }
   .page-hero { padding: 24px 20px; }
   .hero-title { font-size: 34px; }
   .agent-spokes { grid-template-columns: repeat(2, 1fr); }
+
+  .pipeline-flow {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .pipeline-node {
+    min-width: 0;
+    width: 100%;
+  }
+  .pipeline-arrow {
+    width: 100%;
+    text-align: center;
+    padding: 2px 0;
+    transform: rotate(90deg);
+  }
 }
