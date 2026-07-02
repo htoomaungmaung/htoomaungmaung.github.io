@@ -4,17 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>erp-web-form | Showcase | Htoo Maung Maung</title>
-  <meta name="description" content="erp-web-form is a secure schema-driven Salesforce web form platform for enterprise education workflows, with a phased AI roadmap built on top of a stable production core.">
+  <meta name="description" content="erp-web-form is a secure web form platform architected entirely on Salesforce: no external services to run, PII kept inside the Salesforce trust boundary, AES-256 encrypted access, and repeatable production runbooks.">
   <link rel="canonical" href="https://htoomaungmaung.github.io/showcase/erp-web-form.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="erp-web-form | Showcase | Htoo Maung Maung">
-  <meta property="og:description" content="A secure schema-driven Salesforce web form platform for enterprise education workflows, with a phased AI roadmap built on top of a stable production core.">
+  <meta property="og:description" content="A secure web form platform architected entirely on Salesforce: no external services to run, PII inside the trust boundary, AES-256 encrypted access, and repeatable production runbooks.">
   <meta property="og:image" content="https://htoomaungmaung.github.io/images/og-card.png">
   <meta property="og:url" content="https://htoomaungmaung.github.io/showcase/erp-web-form.html">
   <meta property="og:site_name" content="Htoo Maung Maung">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="erp-web-form | Showcase | Htoo Maung Maung">
-  <meta name="twitter:description" content="A secure schema-driven Salesforce web form platform for enterprise education workflows, with a phased AI roadmap built on top of a stable production core.">
+  <meta name="twitter:description" content="A secure web form platform architected entirely on Salesforce: no external services to run, PII inside the trust boundary, AES-256 encrypted access, and repeatable production runbooks.">
   <meta name="twitter:image" content="https://htoomaungmaung.github.io/images/og-card.png">
   <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,21 +28,22 @@
     <a class="back-link" href="../index.html#showcase">&larr; Back to showcase</a>
 
     <section class="page-hero">
-      <p class="hero-eyebrow">Showcase / Enterprise Platform</p>
+      <p class="hero-eyebrow">Showcase / Architecture &amp; Operations</p>
       <h1 class="hero-title">erp-web-form</h1>
-      <p class="hero-subtitle">A secure schema-driven web form platform built on Salesforce for enterprise education customers and their ERP workflows. The stable core shipped first; AI assistance arrives as a phased layer with guardrails.</p>
+      <p class="hero-subtitle">A secure, schema-driven web form platform architected entirely on Salesforce. Logic runs on-platform, so there is no external service to build, host, or pay for; PII never leaves the Salesforce trust boundary; and every release ships through repeatable production runbooks.</p>
       <div class="hero-badges">
-        <span class="hero-badge success">Active draft</span>
-        <span class="hero-badge">Salesforce + Apex</span>
-        <span class="hero-badge accent">React + TypeScript</span>
-        <span class="hero-badge warning">AI roadmap, not AI hype</span>
+        <span class="hero-badge success">Live at Manabie</span>
+        <span class="hero-badge">Salesforce-native</span>
+        <span class="hero-badge accent">AES-256 encrypted</span>
+        <span class="hero-badge warning">Zero external API surface</span>
       </div>
     </section>
 
     <section class="section-block">
-      <p class="section-kicker">Why it matters</p>
-      <h2 class="section-title">A bridge project between platform delivery and AI leadership</h2>
-      <p class="section-copy">This project combines secure enterprise delivery, product judgment, and practical AI direction in one system. The core platform proves its value in production today, and the AI layer is designed to land on top of that stable foundation rather than replace it.</p>
+      <p class="section-kicker">The thesis</p>
+      <h2 class="section-title">Architected for cost, security, and operability</h2>
+      <p class="section-copy">Most form platforms bolt on a separate frontend host, a middleware API, and a datastore, then spend the rest of their life securing and paying for the seams between them. I built this one to have no seams: the whole system lives on Salesforce, so there is nothing external to integrate, secure, or bill for, and the data never leaves the platform it already trusts.</p>
+      <div class="note">The AI Council and agent-dispatch workflow that runs on top of this platform is a separate case study: <a href="erp-web-form-ai-council.html">erp-web-form AI Council</a>.</div>
     </section>
 
     <div class="detail-grid two-col">
@@ -60,15 +61,15 @@
       </section>
 
       <section class="detail-card">
-        <p class="card-label">AI direction</p>
-        <h3 class="card-title">Phased and guardrail-first</h3>
+        <p class="card-label">Architecture</p>
+        <h3 class="card-title">Why it is all on Salesforce</h3>
         <ul class="detail-list">
-          <li>AI-augmented engineering workflow using JIRA MCP, validators, and reusable instructions.</li>
-          <li>AI-readable project context through notes, hooks, skills, and documentation hierarchy.</li>
-          <li>Documentation synced into Confluence and NotebookLM so both engineers and non-technical stakeholders can navigate the same source of truth.</li>
-          <li>Prompt-assisted schema generation is positioned as a later layer with strict validation, governance, and human review.</li>
+          <li><strong>No external API to build or pay for.</strong> Apex <code>@RemoteAction</code> serves the form logic on-platform, so there is no middleware tier to host, scale, or bill.</li>
+          <li><strong>Data residency by default.</strong> PII and health data stay inside the Salesforce trust boundary rather than crossing into a separate service.</li>
+          <li><strong>Encryption at the access layer.</strong> AES-256 encrypted URL tokens gate targeted, contact-specific links without a custom auth service.</li>
+          <li><strong>Guest-user safe.</strong> The whole flow works under strict guest-user security constraints, so public distribution never widens the attack surface.</li>
         </ul>
-        <div class="note">The claim here is deliberate: the secure core platform is shipped and live, and AI-assisted generation is intentionally phased behind strict validation, governance, and human review.</div>
+        <div class="note">Fewer moving parts is the security story and the cost story at once: nothing to integrate is nothing to breach and nothing to invoice.</div>
       </section>
     </div>
 
@@ -89,20 +90,39 @@
         <p class="card-label">Proof points</p>
         <h3 class="card-title">Measured outcomes</h3>
         <ul class="detail-list">
+          <li>Powers production enrollment, event registration, RFI, and targeted health-survey workflows for enterprise education customers.</li>
           <li>3 major releases with zero critical production incidents in the current role.</li>
-          <li>AI-augmented debugging workflow that reduced bug-fix cycle time from about 4 hours to 45 minutes.</li>
-          <li>Documentation operating system syncing 57 pages across Obsidian, Confluence, and NotebookLM.</li>
+          <li>Queue-based asynchronous delivery with scheduled auto-processing, tuned for reliable high-throughput submission under concurrent load.</li>
+          <li>Repeatable, recipe-based deployments and structured production logging for fast troubleshooting.</li>
           <li>Distributed delivery across Singapore, Japan, Vietnam, and the Philippines.</li>
         </ul>
       </section>
     </div>
+
+    <section class="section-block">
+      <p class="section-kicker">Operations</p>
+      <h2 class="section-title">Run, not just shipped</h2>
+      <p class="section-copy" style="margin-bottom:20px;">Shipping to production is the start of the job, not the end of it. The platform is built to be operated: every deploy is repeatable, every failure is traceable, and troubleshooting starts from evidence rather than guesswork.</p>
+      <div class="detail-grid two-col">
+        <div class="box">
+          <div class="section-header">Deployment as a recipe</div>
+          <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Documented, repeatable runbooks.</strong> Releases follow a fixed recipe rather than tribal memory, so any release is reproducible and reviewable.</div></div>
+          <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Same steps every time.</strong> Predictable deploys are what make zero-critical-incident releases repeatable instead of lucky.</div></div>
+        </div>
+        <div class="box">
+          <div class="section-header">Logging and troubleshooting</div>
+          <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Production-level logging.</strong> Form operations and multi-object flows emit enough signal to reconstruct what happened, on-platform.</div></div>
+          <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Evidence-first debugging.</strong> Issues are triaged from logs and the failing transaction, not reproduced by guesswork, which keeps time-to-fix low.</div></div>
+        </div>
+      </div>
+    </section>
 
     <section class="detail-card">
       <p class="card-label">Roadmap</p>
       <h3 class="card-title">Where this case study goes next</h3>
       <p class="card-text">This case study grows alongside the platform. Coming next: an architecture visual, a milestone timeline, screenshots, and before-and-after evidence from the debugging flow, documentation sync, and rollout decisions.</p>
       <div class="page-links">
-        <a class="page-button secondary" href="atlas-kiki-org.html">The system behind the workflow: Atlas Agentic OS</a>
+        <a class="page-button secondary" href="erp-web-form-ai-council.html">The AI workflow on top: erp-web-form AI Council</a>
         <a class="page-button" href="../index.html#contact">Discuss the work</a>
       </div>
     </section>

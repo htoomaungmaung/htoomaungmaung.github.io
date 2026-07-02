@@ -30,11 +30,12 @@
     <section class="page-hero">
       <p class="hero-eyebrow">Showcase / AI Engineering System</p>
       <h1 class="hero-title">erp-web-form AI Council</h1>
-      <p class="hero-subtitle">I didn't just adopt AI tools. I designed an explicit org chart for them: Claude Opus as architect, Cursor as implementer, GitHub CLI as reviewer, NotebookLM as documentation lead. One human approval gate, four AI roles, one platform.</p>
+      <p class="hero-subtitle">I didn't just adopt AI tools. I designed an explicit org chart for them: Claude Opus as architect, Cursor as implementer, GitHub CLI as reviewer, NotebookLM as documentation lead. Implementation is dispatched to isolated worktrees on a flat-rate subscription, so AI leverage scales without the token bill scaling with it. One human approval gate, four AI roles, one platform.</p>
       <div class="hero-badges">
         <span class="hero-badge success">Live at Manabie</span>
         <span class="hero-badge">Salesforce + React</span>
         <span class="hero-badge accent">~80% faster bug fix</span>
+        <span class="hero-badge warning">Flat-rate AI cost</span>
       </div>
     </section>
 
@@ -140,6 +141,25 @@
       <div class="note">Stage 5 is the constant. The senior engineer is the approval gate, not a step in every stage.</div>
     </section>
 
+    <section class="section-block">
+      <p class="section-kicker">The economics</p>
+      <h2 class="section-title">Cost-aware by design: scale leverage, not the bill</h2>
+      <p class="section-copy" style="margin-bottom:20px;">AI-assisted engineering has a hidden variable cost: the metered tokens spent letting agents read context and iterate all day. I treat that as an engineering-economics problem, not an afterthought. Reasoning-heavy roles run on metered APIs where the quality justifies the spend; high-volume implementation runs on flat-rate tooling; and sourcing is a deliberate build-versus-integrate decision rather than a default-to-vendor reflex.</p>
+      <div class="detail-grid two-col">
+        <div class="detail-card">
+          <p class="card-label">How dispatch works</p>
+          <h3 class="card-title">Fan out to isolated worktrees</h3>
+          <p class="card-text">A dispatch script hands each approved plan to a coding agent running in its own throw-away git worktree. Agents never touch main, run in parallel without colliding, and every run leaves its diff and log behind for the Stage 5 review. Nothing merges without a human verdict.</p>
+        </div>
+        <div class="box">
+          <div class="section-header">Why the cost curve stays flat</div>
+          <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Reasoning on metered tokens, implementation on flat-rate tooling.</strong> The deep-thinking roles stay small and deliberate; the token-hungry code generation runs where volume does not meter.</div></div>
+          <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>More agents does not mean a bigger invoice.</strong> Scaling parallel implementation scales throughput, not per-token spend.</div></div>
+          <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Build versus integrate, deliberately.</strong> I evaluated open-source models on Hugging Face against closed-model APIs on cost and data privacy, so AI sourcing is a decision, not a reflex.</div></div>
+        </div>
+      </div>
+    </section>
+
     <div class="detail-grid two-col">
       <div class="detail-card">
         <p class="card-label">Layer 4</p>
@@ -149,10 +169,10 @@
       <div class="box">
         <div class="section-header">What is in the layer</div>
         <ul class="detail-list">
-          <li><strong>context.md</strong> &mdash; project state, sprint goal, known risks, and team contacts as a machine-readable briefing.</li>
-          <li><strong>Skill files</strong> &mdash; reusable prompt recipes for recurring tasks: bug triage, PR review, doc sync.</li>
-          <li><strong>Hooks</strong> &mdash; file-save triggers that run validators and sync automatically.</li>
-          <li><strong>Validators</strong> &mdash; structured output checks that reject malformed AI completions before they reach Stage 5.</li>
+          <li><strong>context.md</strong>: project state, sprint goal, known risks, and team contacts as a machine-readable briefing.</li>
+          <li><strong>Skill files</strong>: reusable prompt recipes for recurring tasks: bug triage, PR review, doc sync.</li>
+          <li><strong>Hooks</strong>: file-save triggers that run validators and sync automatically.</li>
+          <li><strong>Validators</strong>: structured output checks that reject malformed AI completions before they reach Stage 5.</li>
         </ul>
       </div>
     </div>
@@ -184,6 +204,12 @@
       </div>
     </section>
 
+    <section class="section-block">
+      <p class="section-kicker">Adoption</p>
+      <h2 class="section-title">From my workflow to the team's default</h2>
+      <p class="section-copy">This is not a private productivity hack. I turned individual AI proficiency into a team capability: I defined the AI-assisted development playbook, the reusable prompts, workflows, guardrails, and agent-dispatch recipes, and onboarded engineers into it, so AI-augmented development became the default way the team builds rather than something only I do. Tool adoption across the engineering team followed, with the review pipeline acting as a force multiplier for code-review quality and delivery velocity, and less delivery risk concentrated in any single senior engineer.</p>
+    </section>
+
     <div class="bottom-grid">
       <div class="box">
         <div class="section-header">What I did not do</div>
@@ -200,6 +226,7 @@
 
     <div class="page-links">
       <a class="page-button" href="../index.html#showcase">Back to homepage showcase</a>
+      <a class="page-button secondary" href="erp-web-form.html">The platform underneath: erp-web-form</a>
       <a class="page-button secondary" href="atlas-kiki-org.html">The same philosophy at home: Atlas Agentic OS</a>
     </div>
   </main>
