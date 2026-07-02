@@ -1,7 +1,5 @@
-/* Google Analytics 4 loader.
-   To enable: replace G-XXXXXXXXXX below with your GA4 Measurement ID.
-   Find it in Google Analytics > Admin > Data Streams > (your web stream).
-   Until a real ID is set, this file does nothing. */
+/* Google Analytics 4 loader. Measurement ID G-46QRYQH4ZT, activated 2026-06-30.
+   The loader no-ops if the ID is ever unset (placeholder G-XXXXXXXXXX). */
 (function () {
   'use strict';
 

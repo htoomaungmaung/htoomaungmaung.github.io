@@ -1,10 +1,10 @@
 /* Floating "leave a message" widget.
    Self-contained: injects its own styles + markup, works on any page.
 
-   To enable real capture (instead of the mailto fallback), set WEB3FORMS_KEY
-   to a free access key from https://web3forms.com (register it with the inbox
-   you want messages delivered to: htoofranz100@gmail.com).
-   Until then, the widget opens the visitor's email app prefilled. */
+   Submissions go to Web3Forms, delivered to htoofranz100@gmail.com. The access
+   key below is a public client-side key by design (Web3Forms model); the
+   honeypot field handles bots. If the key is ever unset, the widget falls back
+   to opening the visitor's email app prefilled. */
 (function () {
   'use strict';
 
@@ -132,7 +132,7 @@
 
       if (!configured) {
         var subject = encodeURIComponent('Portfolio message from ' + name);
-        var body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+        var body = encodeURIComponent(message + '\n\n- ' + name + ' (' + email + ')');
         window.location.href = 'mailto:' + DEST_EMAIL + '?subject=' + subject + '&body=' + body;
         setStatus('Opening your email app so you can send the message...', true);
         return;

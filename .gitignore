@@ -3,3 +3,7 @@ _site
 .jekyll-metadata
 ._*
 .superpowers/
+.DS_Store
+
+# Playwright MCP output (screenshots/traces from browser_* tools)
+.playwright-mcp/

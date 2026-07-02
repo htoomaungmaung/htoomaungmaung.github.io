@@ -1,26 +1,14 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: My portfolio site
-email: htoomaungmg@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  This is my personal portfollio site
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: 
-github_username:  htoomaungmaung
+# Site settings for GitHub Pages (Jekyll).
+# The site itself is plain HTML/CSS/JS; Jekyll only builds and serves it,
+# so these values mainly feed /feed.xml and default metadata.
+title: Htoo Maung Maung | AI Engineering Leader
+email: htoofranz100@gmail.com
+description: >-
+  Engineering leader building AI-powered teams and shipping enterprise SaaS
+  products across 4 countries.
+baseurl: ""
+url: "https://htoomaungmaung.github.io"
+github_username: htoomaungmaung
 
 # Build settings
 markdown: kramdown
@@ -28,14 +16,7 @@ theme: minima
 plugins:
   - jekyll-feed
 
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+# Keep internal working documents out of the published site.
+exclude:
+  - docs
+  - README.md
