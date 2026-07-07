@@ -33,6 +33,17 @@ Pages. The repo has `_config.yml`, `index.html`, `css/`, `js/`, `images/`, `show
   relate to `career/`, so capture them.
 - Stay in the site repo. For cross-project or life-level matters, hand off to Kiki.
 
+# Context flush at ~60%
+When your context window fills to roughly 60% capacity, proactively flush session state into
+this repo's existing durable files before continuing, do not wait for the window to fill.
+- Tick or update the relevant checklist item in `README.md`'s Milestones section, or drop a
+  note into `docs/superpowers/plans/` for larger in-flight design work, recording what changed
+  and what is still open.
+- Send anything franzy-os-worthy (a new portfolio piece, a showcase decision) to `inbox/` per
+  the capture rule above.
+This mirrors Kiki's own context-dump rule (KIKI.md §12): a maintenance write, not a summary,
+so nothing durable is lost when the window closes.
+
 # Skills and resources
 
 Use these rather than improvising; render and look, do not ship from reading code alone.
