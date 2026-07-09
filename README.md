@@ -19,7 +19,7 @@ Portfolio-specific skills are at `/srv/files/projects/franzy-os/.claude/skills/s
 
 ### Hub-and-spoke coordination
 
-Toby reports to **Kiki** (franzy's chief of staff, keeper of franzy-os). Cross-project context and life-level tasks flow through Kiki, who lives at:
+Alfred reports to **Kiki** (franzy's chief of staff, keeper of franzy-os). Cross-project context and life-level tasks flow through Kiki, who lives at:
 - `/srv/files/projects/franzy-os/.claude/agents/kiki.md`
 - `/srv/files/projects/franzy-os/KIKI.md`
 
