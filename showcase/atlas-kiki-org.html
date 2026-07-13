@@ -28,13 +28,13 @@
     <a class="back-link" href="../index.html#showcase">&larr; Back to showcase</a>
 
     <section class="page-hero">
-      <p class="hero-eyebrow">Showcase / Personal AI Infrastructure</p>
+      <p class="hero-eyebrow">Showcase / Applied AI Systems and Agent Orchestration</p>
       <h1 class="hero-title">Atlas Agentic OS</h1>
-      <p class="hero-subtitle">I run a personal AI operating system on bare metal. Seven named agents, a shared file-based knowledge system, async inbox communication, and no always-on process. It works across devices and survives a change of model.</p>
+      <p class="hero-subtitle">I run a personal AI operating system on a self-hosted server. A team of named agents, a shared file-based knowledge system, async inbox communication, and no always-on process. Each agent is a pickable chat model backed by a real coding agent, it works across devices, and it survives a change of model.</p>
       <div class="hero-badges">
-        <span class="hero-badge">Self-hosted on atlas</span>
+        <span class="hero-badge">Self-hosted</span>
         <span class="hero-badge success">Live and in daily use</span>
-        <span class="hero-badge accent">Zero vendor lock-in</span>
+        <span class="hero-badge accent">Multi-provider, zero lock-in</span>
       </div>
     </section>
 
@@ -61,7 +61,7 @@
           <div class="agent-node">
             <img src="../images/agents/juno.svg" alt="Juno avatar" width="52" height="52">
             <div class="agent-name">Juno</div>
-            <div class="agent-role">crown-jewels</div>
+            <div class="agent-role">a work project</div>
           </div>
           <div class="agent-node">
             <img src="../images/agents/argus.svg" alt="Argus avatar" width="52" height="52">
@@ -71,7 +71,7 @@
           <div class="agent-node">
             <img src="../images/agents/jarvis.svg" alt="Jarvis avatar" width="52" height="52">
             <div class="agent-name">Jarvis</div>
-            <div class="agent-role">atlas homelab</div>
+            <div class="agent-role">self-hosted server</div>
           </div>
           <div class="agent-node">
             <img src="../images/agents/alfred.svg" alt="Alfred avatar" width="52" height="52">
@@ -81,12 +81,7 @@
           <div class="agent-node">
             <img src="../images/agents/plato.svg" alt="Plato avatar" width="52" height="52">
             <div class="agent-name">Plato</div>
-            <div class="agent-role">erp-web-form</div>
-          </div>
-          <div class="agent-node">
-            <img src="../images/agents/hera.svg" alt="Hera avatar" width="52" height="52">
-            <div class="agent-name">Hera</div>
-            <div class="agent-role">wedding planner</div>
+            <div class="agent-role">another work project</div>
           </div>
         </div>
       </div>
@@ -101,13 +96,44 @@
       <p class="section-copy" style="margin-bottom:18px;">A file-based second brain structured as an OKF (Open Knowledge Format) bundle: markdown with YAML frontmatter, organized as a graph. Every concept has a <code>type</code>; cross-links use bundle-relative paths, not external URLs. The intelligence is in the structure and the manual, not in any specific model. Swap the model and nothing breaks, because all context is in files any model can read.</p>
       <pre class="code-block">career/      portfolio, resumes, interview prep, applications
 learning/    study plans and notes
-life/        milestones, documents, immigration, travel
+life/        personal milestones and admin
 notes/       daily captures, meeting notes
 projects/    project index
 references/  external references and standards
 runbooks/    step-by-step procedures
-systems/     system descriptions (atlas, erp-web-form...)
+systems/     system descriptions
 tasks/       open loops and tracked commitments</pre>
+    </section>
+
+    <section class="section-block">
+      <p class="section-kicker">The front door</p>
+      <h2 class="section-title">Agents you can pick like any chat model</h2>
+      <p class="section-copy" style="margin-bottom:18px;">A file-based brain is only useful if it is easy to reach. Every agent is exposed as a pickable model in a self-hosted chat UI, so I select "Kiki" or "Alfred" from the model dropdown exactly like picking any hosted assistant. Each is a Workspace Model whose short prompt boots the agent from its domain README, so it orients from a couple of files and retrieves the rest of the knowledge base on demand instead of reloading the whole brain into every chat. That is where the token saving comes from.</p>
+      <div class="detail-grid two-col" style="margin-bottom:0;">
+        <div class="detail-card">
+          <p class="card-label">The engine</p>
+          <h3 class="card-title">A real coding agent per chat</h3>
+          <p class="card-text">Behind those models sits one custom function I wrote. On every turn it spawns a full Claude Code session through the Claude Agent SDK, with filesystem access to the live knowledge base plus artifact handling. This is not a plain API call to a hosted model; the chat window and the terminal are two doors onto one set of files. No import step and no separate RAG index to keep in sync.</p>
+        </div>
+        <div class="detail-card">
+          <p class="card-label">Model-agnostic, made concrete</p>
+          <h3 class="card-title">One pipe, many providers</h3>
+          <p class="card-text">The same function fronts a subscription Claude model and cheaper open models, selectable per agent from a dropdown. A heavy reasoning task picks the strong model; a bulk or throwaway task picks a cheap one. The persona is identical either way, because it lives in files, not in the model. This is the model-agnostic principle proven at the access layer, not just asserted in a design doc.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <p class="section-kicker">Engineering war story</p>
+      <h2 class="section-title">The cross-pipe credential leak</h2>
+      <p class="section-copy" style="margin-bottom:18px;">Running several provider variants of the same pipe inside one server process surfaced a real production bug: provider credentials leaked across chats. It is a small story with a general lesson about shared mutable state, which is exactly why it belongs here.</p>
+      <div class="box">
+        <div class="section-header">Root cause to durable fix</div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>The symptom.</strong> The subscription agent started answering as the cheap open model. A restart fixed it, then it broke again after the next chat, so it flip-flopped and looked intermittent.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>The cause.</strong> Each pipe set its provider by mutating the shared process environment and never cleared it. One agent's credentials persisted between turns, and the next agent, which relied on that ambient state, inherited them.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>The trap.</strong> A restart gave a clean environment, which is why it flip-flopped rather than failing outright. A partial fix cleared the leftover key but not the leftover endpoint, so the right token was posted to the wrong URL and failed auth.</div></div>
+        <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>The fix.</strong> Reset the auth variables at the top of every turn, before applying that pipe's own config, so a turn is self-contained and cannot inherit what ran before it. The durable answer was not "clear one more variable" but "make each turn idempotent from a known clean baseline," and stop selecting a provider from ambient state at all.</div></div>
+      </div>
     </section>
 
     <section class="pipeline">
@@ -152,8 +178,8 @@ tasks/       open loops and tracked commitments</pre>
     <div class="detail-grid two-col">
       <div class="detail-card">
         <p class="card-label">The foundation</p>
-        <h3 class="card-title">atlas, bare-metal Ubuntu</h3>
-        <p class="card-text">A self-hosted home server backing the whole system. AMD Ryzen 7, 48 GB RAM, 2 TB NVMe. 12+ Dockerized services for media, photos, file sync, backups, and AI agent supervision.</p>
+        <h3 class="card-title">A self-hosted server</h3>
+        <p class="card-text">Bare-metal Ubuntu backing the whole system. AMD Ryzen 7, 48 GB RAM, 2 TB NVMe. 12+ Dockerized services for media, photos, file sync, backups, and AI agent supervision.</p>
         <ul class="chip-list" style="margin-top:14px;">
           <li>Ryzen 7</li>
           <li>48 GB RAM</li>
@@ -164,10 +190,10 @@ tasks/       open loops and tracked commitments</pre>
       <div class="detail-card">
         <p class="card-label">Access and safety</p>
         <h3 class="card-title">Private by design</h3>
-        <p class="card-text">Zero public-facing ports; all access via Tailscale. Omnigent MCP runs agent orchestration as a Dockerized service on PostgreSQL with a sandboxed systemd runner wired to Claude Code. Multi-tier backup: nightly rclone to Google Drive, Restic snapshots, offsite NVMe rotation.</p>
+        <p class="card-text">Zero public-facing ports; all access over a private VPN. An agent-orchestration service runs on PostgreSQL with a sandboxed systemd runner wired to Claude Code. Multi-tier backup: nightly rclone to Google Drive, Restic snapshots, offsite NVMe rotation.</p>
         <ul class="chip-list" style="margin-top:14px;">
-          <li>Tailscale only</li>
-          <li>Omnigent MCP</li>
+          <li>Private VPN only</li>
+          <li>Sandboxed runner</li>
           <li>Multi-tier backup</li>
         </ul>
       </div>
@@ -176,7 +202,7 @@ tasks/       open loops and tracked commitments</pre>
     <section class="section-block">
       <p class="section-kicker">The dashboard</p>
       <h2 class="section-title">Honest gamification, not vanity metrics</h2>
-      <p class="section-copy" style="margin-bottom:18px;">A static card-grid dashboard (Tailscale/LAN only) turns the OKF bundle into a glanceable HUD, rebuilt every 15 minutes straight from the same markdown files the agents write to. Nothing shown can be stale or fabricated, because there is nowhere else for a number to come from.</p>
+      <p class="section-copy" style="margin-bottom:18px;">A static card-grid dashboard (private network only) turns the OKF bundle into a glanceable HUD, rebuilt every 15 minutes straight from the same markdown files the agents write to. Nothing shown can be stale or fabricated, because there is nowhere else for a number to come from.</p>
       <div class="box">
         <div class="section-header">How it stays honest</div>
         <div class="rule"><div class="rule-dot"></div><div class="rule-text"><strong>Levelling HUD.</strong> Level/XP bar, wellness streak, and a goals ring, all derived from real files, not hardcoded.</div></div>
