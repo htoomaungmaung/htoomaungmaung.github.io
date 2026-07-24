@@ -14,13 +14,13 @@ Personal portfolio site for **franzy** (Maung Maung Htoo). Simple Jekyll-based s
 
 ### Where Alfred lives
 
-Alfred's primary definition is at `/srv/files/projects/franzy-os/.claude/agents/alfred.md`
+Alfred's portable definition is at `/srv/files/projects/franzy-os/agents/alfred.md`
+(Claude Code fallback: `franzy-os/.claude/agents/alfred.md`).
 Portfolio-specific skills are at `/srv/files/projects/franzy-os/.claude/skills/site-preview/` and `showcase-entry/`
 
 ### Hub-and-spoke coordination
 
-Alfred reports to **Kiki** (franzy's chief of staff, keeper of franzy-os). Cross-project context and life-level tasks flow through Kiki, who lives at:
-- `/srv/files/projects/franzy-os/.claude/agents/kiki.md`
+Alfred reports to **Kiki** (franzy's chief of staff, keeper of franzy-os). Cross-project context and life-level tasks flow through Kiki:
 - `/srv/files/projects/franzy-os/KIKI.md`
 
 ## Project structure
@@ -34,7 +34,7 @@ htoomaungmaung.github.io/
 └── js/                     # Custom scripts
 ```
 
-**Note:** Alfred (franzy's career + learning + portfolio agent) owns this site. Alfred's definition lives in the franzy-os repo at `/srv/files/projects/franzy-os/.claude/agents/alfred.md`
+**Note:** Alfred (franzy's career + learning + portfolio agent) owns this site. Alfred's definition lives in the franzy-os repo at `/srv/files/projects/franzy-os/agents/alfred.md`
 
 ## Milestones
 
@@ -64,7 +64,7 @@ htoomaungmaung.github.io/
 
 When using Cursor or other AI coding assistants on this project:
 1. Read the franzy-os agent manifest at `/srv/files/projects/franzy-os/projects/README.md`
-2. Refer to Alfred's definition at `/srv/files/projects/franzy-os/.claude/agents/alfred.md`
+2. Load Alfred's portable definition at `/srv/files/projects/franzy-os/agents/alfred.md`
 3. Refer to Jekyll documentation for site structure
 
 The portfolio site is owned by Alfred as part of the career + learning + portfolio domain. For site-specific conventions and Alfred's capabilities, see the franzy-os project.
