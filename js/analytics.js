@@ -1,9 +1,9 @@
-/* Google Analytics 4 loader. Measurement ID G-46QRYQH4ZT, activated 2026-06-30.
+/* Google Analytics 4 loader. Measurement ID G-YMKBHYQ04X.
    The loader no-ops if the ID is ever unset (placeholder G-XXXXXXXXXX). */
 (function () {
   'use strict';
 
-  var GA_ID = 'G-46QRYQH4ZT';
+  var GA_ID = 'G-YMKBHYQ04X';
 
   if (!GA_ID || GA_ID === 'G-XXXXXXXXXX') return; // not configured yet
 
